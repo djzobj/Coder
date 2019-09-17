@@ -14,6 +14,11 @@
 		E5EF4132232F5F3D00A319EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5EF4131232F5F3D00A319EC /* Assets.xcassets */; };
 		E5EF4135232F5F3D00A319EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EF4133232F5F3D00A319EC /* LaunchScreen.storyboard */; };
 		E5EF4138232F5F3D00A319EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4137232F5F3D00A319EC /* main.m */; };
+		E5EF414F232F813E00A319EC /* DJZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF414E232F813E00A319EC /* DJZLoginViewController.m */; };
+		E5EF4152232F81CD00A319EC /* DJZNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4151232F81CD00A319EC /* DJZNetWorking.m */; };
+		E5EF4155232F81ED00A319EC /* DJZLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4154232F81ED00A319EC /* DJZLoginViewModel.m */; };
+		E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4159232F825A00A319EC /* DJZLoginView.m */; };
+		E5EF415C232F826D00A319EC /* DJZLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5EF415B232F826D00A319EC /* DJZLoginView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,17 @@
 		E5EF4134232F5F3D00A319EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5EF4136232F5F3D00A319EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5EF4137232F5F3D00A319EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E5EF414D232F813E00A319EC /* DJZLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZLoginViewController.h; sourceTree = "<group>"; };
+		E5EF414E232F813E00A319EC /* DJZLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZLoginViewController.m; sourceTree = "<group>"; };
+		E5EF4150232F81CD00A319EC /* DJZNetWorking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZNetWorking.h; sourceTree = "<group>"; };
+		E5EF4151232F81CD00A319EC /* DJZNetWorking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZNetWorking.m; sourceTree = "<group>"; };
+		E5EF4153232F81ED00A319EC /* DJZLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZLoginViewModel.h; sourceTree = "<group>"; };
+		E5EF4154232F81ED00A319EC /* DJZLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZLoginViewModel.m; sourceTree = "<group>"; };
+		E5EF4158232F825A00A319EC /* DJZLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZLoginView.h; sourceTree = "<group>"; };
+		E5EF4159232F825A00A319EC /* DJZLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZLoginView.m; sourceTree = "<group>"; };
+		E5EF415B232F826D00A319EC /* DJZLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DJZLoginView.xib; sourceTree = "<group>"; };
+		E5EF415D232F895E00A319EC /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		E5EF415E232F899F00A319EC /* Coder.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coder.pch; sourceTree = "<group>"; };
 		FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +104,7 @@
 				E5EF4140232F62B000A319EC /* AppDelegate */,
 				E5EF412B232F5F3C00A319EC /* ViewController.h */,
 				E5EF412C232F5F3C00A319EC /* ViewController.m */,
+				E5EF415E232F899F00A319EC /* Coder.pch */,
 				E5EF412E232F5F3C00A319EC /* Main.storyboard */,
 				E5EF4131232F5F3D00A319EC /* Assets.xcassets */,
 				E5EF4133232F5F3D00A319EC /* LaunchScreen.storyboard */,
@@ -160,6 +177,7 @@
 		E5EF4146232F634100A319EC /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				E5EF415D232F895E00A319EC /* AppMacro.h */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -167,6 +185,7 @@
 		E5EF4147232F634E00A319EC /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				E5EF414C232F810200A319EC /* Login */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -197,6 +216,22 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E5EF414C232F810200A319EC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E5EF414D232F813E00A319EC /* DJZLoginViewController.h */,
+				E5EF414E232F813E00A319EC /* DJZLoginViewController.m */,
+				E5EF4150232F81CD00A319EC /* DJZNetWorking.h */,
+				E5EF4151232F81CD00A319EC /* DJZNetWorking.m */,
+				E5EF4153232F81ED00A319EC /* DJZLoginViewModel.h */,
+				E5EF4154232F81ED00A319EC /* DJZLoginViewModel.m */,
+				E5EF4158232F825A00A319EC /* DJZLoginView.h */,
+				E5EF4159232F825A00A319EC /* DJZLoginView.m */,
+				E5EF415B232F826D00A319EC /* DJZLoginView.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5EF4135232F5F3D00A319EC /* LaunchScreen.storyboard in Resources */,
+				E5EF415C232F826D00A319EC /* DJZLoginView.xib in Resources */,
 				E5EF4132232F5F3D00A319EC /* Assets.xcassets in Resources */,
 				E5EF4130232F5F3C00A319EC /* Main.storyboard in Resources */,
 			);
@@ -314,8 +350,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5EF412D232F5F3C00A319EC /* ViewController.m in Sources */,
+				E5EF4155232F81ED00A319EC /* DJZLoginViewModel.m in Sources */,
+				E5EF4152232F81CD00A319EC /* DJZNetWorking.m in Sources */,
 				E5EF4138232F5F3D00A319EC /* main.m in Sources */,
+				E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */,
 				E5EF412A232F5F3C00A319EC /* AppDelegate.m in Sources */,
+				E5EF414F232F813E00A319EC /* DJZLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Coder/Coder.pch";
 				INFOPLIST_FILE = Coder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -476,6 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Coder/Coder.pch";
 				INFOPLIST_FILE = Coder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
