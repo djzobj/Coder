@@ -9,6 +9,7 @@
 #import "DJZLoginViewController.h"
 #import "DJZLoginViewModel.h"
 #import "DJZLoginView.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface DJZLoginViewController ()
 
@@ -23,17 +24,13 @@
     [super loadView];
     self.view = [UIView new];
     self.view.backgroundColor = [UIColor whiteColor];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.loginView];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 #pragma mark get/set

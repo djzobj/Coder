@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		980758DBA63FF3D3BE6424FA /* libPods-Coder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */; };
+		E5D4ABDF2330A9BC0088111E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D4ABDE2330A9BC0088111E /* CoreLocation.framework */; };
+		E5D4ABE32330B8300088111E /* DJZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABE22330B8300088111E /* DJZTabBarController.m */; };
+		E5D4ABE72330C11B0088111E /* DJZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABE62330C11B0088111E /* DJZHomeViewController.m */; };
+		E5D4ABEA2330D1BD0088111E /* DJZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABE92330D1BD0088111E /* DJZNavigationController.m */; };
+		E5D4ABED2330D40D0088111E /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABEC2330D40D0088111E /* UIViewController+Navigation.m */; };
+		E5D4ABEF2330D5F10088111E /* ico_back_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D4ABEE2330D5F10088111E /* ico_back_gray@2x.png */; };
+		E5D4ABF32330D9190088111E /* DJZXMLParserController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABF22330D9190088111E /* DJZXMLParserController.m */; };
 		E5EF412A232F5F3C00A319EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4129232F5F3C00A319EC /* AppDelegate.m */; };
-		E5EF412D232F5F3C00A319EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF412C232F5F3C00A319EC /* ViewController.m */; };
-		E5EF4130232F5F3C00A319EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EF412E232F5F3C00A319EC /* Main.storyboard */; };
 		E5EF4132232F5F3D00A319EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5EF4131232F5F3D00A319EC /* Assets.xcassets */; };
 		E5EF4135232F5F3D00A319EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EF4133232F5F3D00A319EC /* LaunchScreen.storyboard */; };
 		E5EF4138232F5F3D00A319EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4137232F5F3D00A319EC /* main.m */; };
@@ -24,12 +29,21 @@
 /* Begin PBXFileReference section */
 		11769A9CCAD4162C539EC1EF /* Pods-Coder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coder.release.xcconfig"; path = "Target Support Files/Pods-Coder/Pods-Coder.release.xcconfig"; sourceTree = "<group>"; };
 		16E446AFF94B155DF845D3FB /* Pods-Coder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coder.debug.xcconfig"; path = "Target Support Files/Pods-Coder/Pods-Coder.debug.xcconfig"; sourceTree = "<group>"; };
+		E5D4ABDE2330A9BC0088111E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E5D4ABE12330B8300088111E /* DJZTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZTabBarController.h; sourceTree = "<group>"; };
+		E5D4ABE22330B8300088111E /* DJZTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZTabBarController.m; sourceTree = "<group>"; };
+		E5D4ABE52330C11B0088111E /* DJZHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZHomeViewController.h; sourceTree = "<group>"; };
+		E5D4ABE62330C11B0088111E /* DJZHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZHomeViewController.m; sourceTree = "<group>"; };
+		E5D4ABE82330D1BD0088111E /* DJZNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZNavigationController.h; sourceTree = "<group>"; };
+		E5D4ABE92330D1BD0088111E /* DJZNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZNavigationController.m; sourceTree = "<group>"; };
+		E5D4ABEB2330D40D0088111E /* UIViewController+Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		E5D4ABEC2330D40D0088111E /* UIViewController+Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		E5D4ABEE2330D5F10088111E /* ico_back_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_back_gray@2x.png"; sourceTree = "<group>"; };
+		E5D4ABF12330D9190088111E /* DJZXMLParserController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZXMLParserController.h; sourceTree = "<group>"; };
+		E5D4ABF22330D9190088111E /* DJZXMLParserController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZXMLParserController.m; sourceTree = "<group>"; };
 		E5EF4125232F5F3C00A319EC /* Coder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EF4128232F5F3C00A319EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E5EF4129232F5F3C00A319EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E5EF412B232F5F3C00A319EC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E5EF412C232F5F3C00A319EC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E5EF412F232F5F3C00A319EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5EF4131232F5F3D00A319EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5EF4134232F5F3D00A319EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5EF4136232F5F3D00A319EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D4ABDF2330A9BC0088111E /* CoreLocation.framework in Frameworks */,
 				980758DBA63FF3D3BE6424FA /* libPods-Coder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,15 +87,55 @@
 		D781E030DEEEE8D4B8753985 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5D4ABDE2330A9BC0088111E /* CoreLocation.framework */,
 				FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E5D4ABD923308BE10088111E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E5EF415E232F899F00A319EC /* Coder.pch */,
+				E5EF4131232F5F3D00A319EC /* Assets.xcassets */,
+				E5EF4133232F5F3D00A319EC /* LaunchScreen.storyboard */,
+				E5EF4136232F5F3D00A319EC /* Info.plist */,
+				E5EF4137232F5F3D00A319EC /* main.m */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		E5D4ABE02330B7E10088111E /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4ABE12330B8300088111E /* DJZTabBarController.h */,
+				E5D4ABE22330B8300088111E /* DJZTabBarController.m */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		E5D4ABE42330C0F80088111E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4ABF02330D8F00088111E /* XMLParser */,
+				E5D4ABE52330C11B0088111E /* DJZHomeViewController.h */,
+				E5D4ABE62330C11B0088111E /* DJZHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E5D4ABF02330D8F00088111E /* XMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4ABF12330D9190088111E /* DJZXMLParserController.h */,
+				E5D4ABF22330D9190088111E /* DJZXMLParserController.m */,
+			);
+			path = XMLParser;
+			sourceTree = "<group>";
+		};
 		E5EF411C232F5F3C00A319EC = {
 			isa = PBXGroup;
 			children = (
-				E5EF413F232F629800A319EC /* Frameworks */,
 				E5EF4127232F5F3C00A319EC /* Coder */,
 				E5EF4126232F5F3C00A319EC /* Products */,
 				027401EC5A97FC1A905B7DB0 /* Pods */,
@@ -99,26 +154,12 @@
 		E5EF4127232F5F3C00A319EC /* Coder */ = {
 			isa = PBXGroup;
 			children = (
-				E5EF4142232F62D500A319EC /* Resource */,
 				E5EF4141232F62CB00A319EC /* Class */,
+				E5D4ABD923308BE10088111E /* Config */,
+				E5EF4142232F62D500A319EC /* Resource */,
 				E5EF4140232F62B000A319EC /* AppDelegate */,
-				E5EF412B232F5F3C00A319EC /* ViewController.h */,
-				E5EF412C232F5F3C00A319EC /* ViewController.m */,
-				E5EF415E232F899F00A319EC /* Coder.pch */,
-				E5EF412E232F5F3C00A319EC /* Main.storyboard */,
-				E5EF4131232F5F3D00A319EC /* Assets.xcassets */,
-				E5EF4133232F5F3D00A319EC /* LaunchScreen.storyboard */,
-				E5EF4136232F5F3D00A319EC /* Info.plist */,
-				E5EF4137232F5F3D00A319EC /* main.m */,
 			);
 			path = Coder;
-			sourceTree = "<group>";
-		};
-		E5EF413F232F629800A319EC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E5EF4140232F62B000A319EC /* AppDelegate */ = {
@@ -145,6 +186,7 @@
 		E5EF4142232F62D500A319EC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E5D4ABEE2330D5F10088111E /* ico_back_gray@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -185,6 +227,8 @@
 		E5EF4147232F634E00A319EC /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				E5D4ABE42330C0F80088111E /* Home */,
+				E5D4ABE02330B7E10088111E /* Launch */,
 				E5EF414C232F810200A319EC /* Login */,
 			);
 			path = Sections;
@@ -193,6 +237,8 @@
 		E5EF4148232F636400A319EC /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E5D4ABE82330D1BD0088111E /* DJZNavigationController.h */,
+				E5D4ABE92330D1BD0088111E /* DJZNavigationController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -200,6 +246,8 @@
 		E5EF4149232F636E00A319EC /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E5D4ABEB2330D40D0088111E /* UIViewController+Navigation.h */,
+				E5D4ABEC2330D40D0088111E /* UIViewController+Navigation.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -294,9 +342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5EF4135232F5F3D00A319EC /* LaunchScreen.storyboard in Resources */,
+				E5D4ABEF2330D5F10088111E /* ico_back_gray@2x.png in Resources */,
 				E5EF415C232F826D00A319EC /* DJZLoginView.xib in Resources */,
 				E5EF4132232F5F3D00A319EC /* Assets.xcassets in Resources */,
-				E5EF4130232F5F3C00A319EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,27 +397,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5EF412D232F5F3C00A319EC /* ViewController.m in Sources */,
+				E5D4ABE32330B8300088111E /* DJZTabBarController.m in Sources */,
 				E5EF4155232F81ED00A319EC /* DJZLoginViewModel.m in Sources */,
+				E5D4ABE72330C11B0088111E /* DJZHomeViewController.m in Sources */,
 				E5EF4152232F81CD00A319EC /* DJZNetWorking.m in Sources */,
+				E5D4ABEA2330D1BD0088111E /* DJZNavigationController.m in Sources */,
 				E5EF4138232F5F3D00A319EC /* main.m in Sources */,
+				E5D4ABED2330D40D0088111E /* UIViewController+Navigation.m in Sources */,
 				E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */,
 				E5EF412A232F5F3C00A319EC /* AppDelegate.m in Sources */,
 				E5EF414F232F813E00A319EC /* DJZLoginViewController.m in Sources */,
+				E5D4ABF32330D9190088111E /* DJZXMLParserController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E5EF412E232F5F3C00A319EC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5EF412F232F5F3C00A319EC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E5EF4133232F5F3D00A319EC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
