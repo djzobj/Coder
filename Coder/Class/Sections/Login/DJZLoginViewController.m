@@ -23,7 +23,7 @@
 - (void)loadView {
     [super loadView];
     self.view = [UIView new];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
     
 }
 
@@ -31,6 +31,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.loginView];
+    
+    //创建信号
+    RACSubject *subject = [RACSubject subject];
+    RACSubject *signal = [RACSubject subject];
+    //take:取前面几个值
+    //在没到第三个时就遇到[subject sendCompleted];那么就会停止发送信号
+    [[subject take:3] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    //takeLast:取后面多少个值,必须发送完成
+    //只有[subject sendCompleted];才会发送信号
+    [[subject takeLast:2] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    //takeUntil:只要传入的信号发送完成或者signal发送信号,就不会再接收信号的内容
+    [[subject takeUntil:signal] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    //发送任意数据
+    [subject sendNext:@1];
+    [subject sendNext:@"HMJ"];
+    [subject sendNext:@3];
+    [subject sendCompleted];
+    [subject sendNext:@4];
+    [signal sendNext:@"signal"];
 }
 
 #pragma mark get/set

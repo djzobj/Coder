@@ -7,6 +7,7 @@
 //
 
 #import "DJZHomeViewController.h"
+#import "CTMediator+LoginAction.h"
 
 @interface DJZHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _datas = @[@"DJZLoginViewController", @"DJZXMLParserController"];
+    _datas = @[@"DJZLoginViewController", @"DJZXMLParserController", @"DJZRACStudyController"];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);

@@ -21,6 +21,7 @@
 }
 
 - (void)navigation_viewWillAppear:(BOOL)animation {
+    [self navigation_viewWillAppear:animation];
     if (self.navigationController.viewControllers.count > 1) {
         UIImage *image = [UIImage imageNamed:@"ico_back_gray"];
         image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -28,8 +29,6 @@
         self.navigationItem.leftBarButtonItem = item;
     }
     [self.navigationController setNavigationBarHidden:NO animated:animation];
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self navigation_viewWillAppear:animation];
 }
 
 - (void)doBack {

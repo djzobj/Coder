@@ -36,6 +36,7 @@
         @strongify(self)
         self.indicatorView.hidden = YES;
     }];
+
 }
 
 @end

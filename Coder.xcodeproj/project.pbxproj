@@ -24,6 +24,10 @@
 		E5EF4155232F81ED00A319EC /* DJZLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4154232F81ED00A319EC /* DJZLoginViewModel.m */; };
 		E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4159232F825A00A319EC /* DJZLoginView.m */; };
 		E5EF415C232F826D00A319EC /* DJZLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5EF415B232F826D00A319EC /* DJZLoginView.xib */; };
+		E5FCC97F233203FE008EF3CC /* CTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC979233203FE008EF3CC /* CTMediator.m */; };
+		E5FCC98323320452008EF3CC /* CTMediator+LoginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC98223320452008EF3CC /* CTMediator+LoginAction.m */; };
+		E5FCC986233204F4008EF3CC /* DJZTarget_Login.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC985233204F4008EF3CC /* DJZTarget_Login.m */; };
+		E5FCC989233212B4008EF3CC /* DJZRACStudyController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC988233212B4008EF3CC /* DJZRACStudyController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,14 @@
 		E5EF415B232F826D00A319EC /* DJZLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DJZLoginView.xib; sourceTree = "<group>"; };
 		E5EF415D232F895E00A319EC /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		E5EF415E232F899F00A319EC /* Coder.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coder.pch; sourceTree = "<group>"; };
+		E5FCC979233203FE008EF3CC /* CTMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMediator.m; sourceTree = "<group>"; };
+		E5FCC97A233203FE008EF3CC /* CTMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTMediator.h; sourceTree = "<group>"; };
+		E5FCC98123320452008EF3CC /* CTMediator+LoginAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+LoginAction.h"; sourceTree = "<group>"; };
+		E5FCC98223320452008EF3CC /* CTMediator+LoginAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+LoginAction.m"; sourceTree = "<group>"; };
+		E5FCC984233204F4008EF3CC /* DJZTarget_Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZTarget_Login.h; sourceTree = "<group>"; };
+		E5FCC985233204F4008EF3CC /* DJZTarget_Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZTarget_Login.m; sourceTree = "<group>"; };
+		E5FCC987233212B4008EF3CC /* DJZRACStudyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZRACStudyController.h; sourceTree = "<group>"; };
+		E5FCC988233212B4008EF3CC /* DJZRACStudyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZRACStudyController.m; sourceTree = "<group>"; };
 		FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,6 +132,8 @@
 				E5D4ABF02330D8F00088111E /* XMLParser */,
 				E5D4ABE52330C11B0088111E /* DJZHomeViewController.h */,
 				E5D4ABE62330C11B0088111E /* DJZHomeViewController.m */,
+				E5FCC987233212B4008EF3CC /* DJZRACStudyController.h */,
+				E5FCC988233212B4008EF3CC /* DJZRACStudyController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -212,6 +226,7 @@
 		E5EF4145232F633800A319EC /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				E5EF415D232F895E00A319EC /* AppMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -219,7 +234,7 @@
 		E5EF4146232F634100A319EC /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				E5EF415D232F895E00A319EC /* AppMacro.h */,
+				E5FCC978233203FE008EF3CC /* CTMediator */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -278,8 +293,21 @@
 				E5EF4158232F825A00A319EC /* DJZLoginView.h */,
 				E5EF4159232F825A00A319EC /* DJZLoginView.m */,
 				E5EF415B232F826D00A319EC /* DJZLoginView.xib */,
+				E5FCC984233204F4008EF3CC /* DJZTarget_Login.h */,
+				E5FCC985233204F4008EF3CC /* DJZTarget_Login.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E5FCC978233203FE008EF3CC /* CTMediator */ = {
+			isa = PBXGroup;
+			children = (
+				E5FCC97A233203FE008EF3CC /* CTMediator.h */,
+				E5FCC979233203FE008EF3CC /* CTMediator.m */,
+				E5FCC98123320452008EF3CC /* CTMediator+LoginAction.h */,
+				E5FCC98223320452008EF3CC /* CTMediator+LoginAction.m */,
+			);
+			path = CTMediator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,11 +428,15 @@
 				E5D4ABE32330B8300088111E /* DJZTabBarController.m in Sources */,
 				E5EF4155232F81ED00A319EC /* DJZLoginViewModel.m in Sources */,
 				E5D4ABE72330C11B0088111E /* DJZHomeViewController.m in Sources */,
+				E5FCC97F233203FE008EF3CC /* CTMediator.m in Sources */,
+				E5FCC98323320452008EF3CC /* CTMediator+LoginAction.m in Sources */,
 				E5EF4152232F81CD00A319EC /* DJZNetWorking.m in Sources */,
 				E5D4ABEA2330D1BD0088111E /* DJZNavigationController.m in Sources */,
 				E5EF4138232F5F3D00A319EC /* main.m in Sources */,
 				E5D4ABED2330D40D0088111E /* UIViewController+Navigation.m in Sources */,
+				E5FCC986233204F4008EF3CC /* DJZTarget_Login.m in Sources */,
 				E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */,
+				E5FCC989233212B4008EF3CC /* DJZRACStudyController.m in Sources */,
 				E5EF412A232F5F3C00A319EC /* AppDelegate.m in Sources */,
 				E5EF414F232F813E00A319EC /* DJZLoginViewController.m in Sources */,
 				E5D4ABF32330D9190088111E /* DJZXMLParserController.m in Sources */,
@@ -542,15 +574,18 @@
 			baseConfigurationReference = 16E446AFF94B155DF845D3FB /* Pods-Coder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PX66CL7X2G;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coder/Coder.pch";
 				INFOPLIST_FILE = Coder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DJZ.Coder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianbing.qiye.gjj.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = com.jianbing.qiye.gjj.beta;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -560,15 +595,18 @@
 			baseConfigurationReference = 11769A9CCAD4162C539EC1EF /* Pods-Coder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coder/Coder.pch";
 				INFOPLIST_FILE = Coder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DJZ.Coder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianbing.qiye.gjj.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
