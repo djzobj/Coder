@@ -9,6 +9,18 @@
 #import "DJZHomeViewController.h"
 #import "CTMediator+LoginAction.h"
 
+typedef NS_ENUM(NSUInteger, DJZLoginType) {
+    DJZLoginTypePhone,
+    DJZLoginTypeQQ,
+    DJZLoginTypeWX,
+};
+
+typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
+    DJZXXXTypeJ = 1 << 0,
+    DJZXXXTypeK = 1 << 1,
+    DJZXXXTypeZ = 1 << 2,
+};
+
 @interface DJZHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -21,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _datas = @[@"DJZLoginViewController", @"DJZXMLParserController", @"DJZRACStudyController"];
+    _datas = @[@"DJZLoginViewController", @"DJZXMLParserController", @"DJZRACStudyController", @"DJZUIWebViewController", @"DJZWKWebViewController"];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
@@ -31,6 +43,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (BOOL)shouldAutorotate{
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return [super preferredInterfaceOrientationForPresentation];
 }
 
 #pragma mark UITableViewDataSource、UITableViewDelegate

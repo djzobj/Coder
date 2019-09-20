@@ -21,6 +21,32 @@
     _TF = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 30)];
     _TF.placeholder = @"xxx";
     [self.view addSubview:_TF];
+    [self filter];
+    
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        
+        //subscriber并不是一个对象
+        //3. 发送信号
+        [subscriber sendNext:@"send one Message"];
+        
+        //发送error信号
+        NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:1001 userInfo:@{@"errorMsg":@"this is a error message"}];
+        [subscriber sendError:error];
+        
+        //4. 销毁信号
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"signal已销毁");
+        }];
+    }];
+    
+    //2.1 订阅信号
+    [signal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@",x);
+    }];
+    //2.2 针对实际中可能出现的逻辑错误，RAC提供了订阅error信号
+    [signal subscribeError:^(NSError * _Nullable error) {
+        NSLog(@"%@",error);
+    }];
     
 }
 
@@ -37,6 +63,12 @@
         //返回值就是过滤的条件,只有满足这个条件才能获取到内容
     }] subscribeNext:^(id x) {
         NSLog(@"%@", x);
+    }];
+    
+    [[_TF.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
+        return [NSString stringWithFormat:@"1111%@", value];
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"-----%@", x);
     }];
 }
 

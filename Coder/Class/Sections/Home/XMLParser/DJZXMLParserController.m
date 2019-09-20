@@ -17,7 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (BOOL)shouldAutorotate{
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationLandscapeLeft;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return [super preferredInterfaceOrientationForPresentation];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

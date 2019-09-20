@@ -25,6 +25,18 @@
     [super viewWillAppear:animated];
 }
 
+- (BOOL)shouldAutorotate {
+    return [self.visibleViewController shouldAutorotate];
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return [self.visibleViewController supportedInterfaceOrientations];
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return [self.visibleViewController preferredInterfaceOrientationForPresentation];
+}
+
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if (self.viewControllers.count <= 1) {
         return NO;

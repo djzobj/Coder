@@ -28,6 +28,12 @@
 		E5FCC98323320452008EF3CC /* CTMediator+LoginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC98223320452008EF3CC /* CTMediator+LoginAction.m */; };
 		E5FCC986233204F4008EF3CC /* DJZTarget_Login.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC985233204F4008EF3CC /* DJZTarget_Login.m */; };
 		E5FCC989233212B4008EF3CC /* DJZRACStudyController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC988233212B4008EF3CC /* DJZRACStudyController.m */; };
+		E5FCC98D23322233008EF3CC /* DJZUIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC98C23322233008EF3CC /* DJZUIWebViewController.m */; };
+		E5FCC9902332224B008EF3CC /* DJZWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC98F2332224B008EF3CC /* DJZWKWebViewController.m */; };
+		E5FCC99223322394008EF3CC /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FCC99123322394008EF3CC /* JavaScriptCore.framework */; };
+		E5FCC995233226BA008EF3CC /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = E5FCC993233226B9008EF3CC /* test.html */; };
+		E5FCC996233226BA008EF3CC /* NativeApi.js in Resources */ = {isa = PBXBuildFile; fileRef = E5FCC994233226BA008EF3CC /* NativeApi.js */; };
+		E5FCC99823322907008EF3CC /* ImgAddClickEvent.js in Resources */ = {isa = PBXBuildFile; fileRef = E5FCC99723322907008EF3CC /* ImgAddClickEvent.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +77,14 @@
 		E5FCC985233204F4008EF3CC /* DJZTarget_Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZTarget_Login.m; sourceTree = "<group>"; };
 		E5FCC987233212B4008EF3CC /* DJZRACStudyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZRACStudyController.h; sourceTree = "<group>"; };
 		E5FCC988233212B4008EF3CC /* DJZRACStudyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZRACStudyController.m; sourceTree = "<group>"; };
+		E5FCC98B23322233008EF3CC /* DJZUIWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZUIWebViewController.h; sourceTree = "<group>"; };
+		E5FCC98C23322233008EF3CC /* DJZUIWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZUIWebViewController.m; sourceTree = "<group>"; };
+		E5FCC98E2332224B008EF3CC /* DJZWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZWKWebViewController.h; sourceTree = "<group>"; };
+		E5FCC98F2332224B008EF3CC /* DJZWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZWKWebViewController.m; sourceTree = "<group>"; };
+		E5FCC99123322394008EF3CC /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E5FCC993233226B9008EF3CC /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		E5FCC994233226BA008EF3CC /* NativeApi.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NativeApi.js; sourceTree = "<group>"; };
+		E5FCC99723322907008EF3CC /* ImgAddClickEvent.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ImgAddClickEvent.js; sourceTree = "<group>"; };
 		FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5FCC99223322394008EF3CC /* JavaScriptCore.framework in Frameworks */,
 				E5D4ABDF2330A9BC0088111E /* CoreLocation.framework in Frameworks */,
 				980758DBA63FF3D3BE6424FA /* libPods-Coder.a in Frameworks */,
 			);
@@ -99,6 +114,7 @@
 		D781E030DEEEE8D4B8753985 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5FCC99123322394008EF3CC /* JavaScriptCore.framework */,
 				E5D4ABDE2330A9BC0088111E /* CoreLocation.framework */,
 				FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */,
 			);
@@ -242,6 +258,7 @@
 		E5EF4147232F634E00A319EC /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				E5FCC98A233221A7008EF3CC /* WebView */,
 				E5D4ABE42330C0F80088111E /* Home */,
 				E5D4ABE02330B7E10088111E /* Launch */,
 				E5EF414C232F810200A319EC /* Login */,
@@ -310,6 +327,20 @@
 			path = CTMediator;
 			sourceTree = "<group>";
 		};
+		E5FCC98A233221A7008EF3CC /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				E5FCC994233226BA008EF3CC /* NativeApi.js */,
+				E5FCC993233226B9008EF3CC /* test.html */,
+				E5FCC99723322907008EF3CC /* ImgAddClickEvent.js */,
+				E5FCC98B23322233008EF3CC /* DJZUIWebViewController.h */,
+				E5FCC98C23322233008EF3CC /* DJZUIWebViewController.m */,
+				E5FCC98E2332224B008EF3CC /* DJZWKWebViewController.h */,
+				E5FCC98F2332224B008EF3CC /* DJZWKWebViewController.m */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,8 +401,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5EF4135232F5F3D00A319EC /* LaunchScreen.storyboard in Resources */,
+				E5FCC99823322907008EF3CC /* ImgAddClickEvent.js in Resources */,
 				E5D4ABEF2330D5F10088111E /* ico_back_gray@2x.png in Resources */,
+				E5FCC996233226BA008EF3CC /* NativeApi.js in Resources */,
 				E5EF415C232F826D00A319EC /* DJZLoginView.xib in Resources */,
+				E5FCC995233226BA008EF3CC /* test.html in Resources */,
 				E5EF4132232F5F3D00A319EC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,9 +465,11 @@
 				E5FCC97F233203FE008EF3CC /* CTMediator.m in Sources */,
 				E5FCC98323320452008EF3CC /* CTMediator+LoginAction.m in Sources */,
 				E5EF4152232F81CD00A319EC /* DJZNetWorking.m in Sources */,
+				E5FCC98D23322233008EF3CC /* DJZUIWebViewController.m in Sources */,
 				E5D4ABEA2330D1BD0088111E /* DJZNavigationController.m in Sources */,
 				E5EF4138232F5F3D00A319EC /* main.m in Sources */,
 				E5D4ABED2330D40D0088111E /* UIViewController+Navigation.m in Sources */,
+				E5FCC9902332224B008EF3CC /* DJZWKWebViewController.m in Sources */,
 				E5FCC986233204F4008EF3CC /* DJZTarget_Login.m in Sources */,
 				E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */,
 				E5FCC989233212B4008EF3CC /* DJZRACStudyController.m in Sources */,
