@@ -21,7 +21,6 @@
     _TF = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 30)];
     _TF.placeholder = @"xxx";
     [self.view addSubview:_TF];
-    [self filter];
     
     RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
@@ -47,11 +46,64 @@
     [signal subscribeError:^(NSError * _Nullable error) {
         NSLog(@"%@",error);
     }];
-    
+    [self test];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)test {
+    //创建信号
+    RACSubject *subject = [RACSubject subject];
+    RACSubject *signal = [RACSubject subject];
+    //take:取前面几个值
+    //在没到第三个时就遇到[subject sendCompleted];那么就会停止发送信号
+    [[subject take:3] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    //takeLast:取后面多少个值,必须发送完成
+    //只有[subject sendCompleted];才会发送信号
+    [[subject takeLast:2] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    //takeUntil:只要传入的信号发送完成或者signal发送信号,就不会再接收信号的内容
+    [[subject takeUntil:signal] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    //发送任意数据
+    [subject sendNext:@1];
+    [subject sendNext:@"HMJ"];
+    [subject sendNext:@3];
+    [subject sendCompleted];
+    [subject sendNext:@4];
+    [signal sendNext:@"signal"];
+    
+    RACSignal *orgSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@(1)];
+        [subscriber sendNext:@(2)];
+        [subscriber sendNext:@(3)];
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            
+        }];
+    }];
+    RACSignal *newSignal = [orgSignal bind:^RACSignalBindBlock{
+        RACSignalBindBlock bindBlock = ^(id value, BOOL *stop) {
+            RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                [subscriber sendNext:@(2*[value intValue])];
+                [subscriber sendCompleted];
+                return [RACDisposable disposableWithBlock:^{
+                   
+                }];
+            }];
+            return signal;
+        };
+        return bindBlock;
+    }];
+    [newSignal subscribeNext:^(id  _Nullable x) {
+        
+    }];
 }
 
 - (void)filter

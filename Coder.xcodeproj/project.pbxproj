@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		980758DBA63FF3D3BE6424FA /* libPods-Coder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */; };
+		E51F5D432334D42200AD6379 /* jl.docx in Resources */ = {isa = PBXBuildFile; fileRef = E51F5D422334D42200AD6379 /* jl.docx */; };
 		E5D4ABDF2330A9BC0088111E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D4ABDE2330A9BC0088111E /* CoreLocation.framework */; };
 		E5D4ABE32330B8300088111E /* DJZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABE22330B8300088111E /* DJZTabBarController.m */; };
 		E5D4ABE72330C11B0088111E /* DJZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABE62330C11B0088111E /* DJZHomeViewController.m */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		11769A9CCAD4162C539EC1EF /* Pods-Coder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coder.release.xcconfig"; path = "Target Support Files/Pods-Coder/Pods-Coder.release.xcconfig"; sourceTree = "<group>"; };
 		16E446AFF94B155DF845D3FB /* Pods-Coder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coder.debug.xcconfig"; path = "Target Support Files/Pods-Coder/Pods-Coder.debug.xcconfig"; sourceTree = "<group>"; };
+		E51F5D422334D42200AD6379 /* jl.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = jl.docx; sourceTree = "<group>"; };
 		E5D4ABDE2330A9BC0088111E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E5D4ABE12330B8300088111E /* DJZTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZTabBarController.h; sourceTree = "<group>"; };
 		E5D4ABE22330B8300088111E /* DJZTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZTabBarController.m; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		E5FCC98A233221A7008EF3CC /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				E51F5D422334D42200AD6379 /* jl.docx */,
 				E5FCC994233226BA008EF3CC /* NativeApi.js */,
 				E5FCC993233226B9008EF3CC /* test.html */,
 				E5FCC99723322907008EF3CC /* ImgAddClickEvent.js */,
@@ -402,6 +405,7 @@
 			files = (
 				E5EF4135232F5F3D00A319EC /* LaunchScreen.storyboard in Resources */,
 				E5FCC99823322907008EF3CC /* ImgAddClickEvent.js in Resources */,
+				E51F5D432334D42200AD6379 /* jl.docx in Resources */,
 				E5D4ABEF2330D5F10088111E /* ico_back_gray@2x.png in Resources */,
 				E5FCC996233226BA008EF3CC /* NativeApi.js in Resources */,
 				E5EF415C232F826D00A319EC /* DJZLoginView.xib in Resources */,
