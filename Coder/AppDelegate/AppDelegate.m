@@ -12,6 +12,7 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) WKWebView *webView;
 
 @end
 
@@ -24,6 +25,11 @@
     DJZTabBarController *tabBarController = [DJZTabBarController new];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
+    
+    _webView = [WKWebView new];
+    [_webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        
+    }];
     
     return YES;
 }

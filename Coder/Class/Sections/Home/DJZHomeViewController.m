@@ -43,6 +43,8 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    NSNumber * value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
 }
 
 - (BOOL)shouldAutorotate{
@@ -54,7 +56,7 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    return [super preferredInterfaceOrientationForPresentation];
+    return UIInterfaceOrientationPortrait;
 }
 
 #pragma mark UITableViewDataSource、UITableViewDelegate
@@ -89,6 +91,7 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.estimatedRowHeight = 50;
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     return _tableView;
 }
