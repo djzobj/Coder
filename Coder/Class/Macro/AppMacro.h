@@ -9,5 +9,6 @@
 #ifndef AppMacro_h
 #define AppMacro_h
 
+#define kDJZScreenWidth [UIScreen mainScreen].bounds.size.width
 
 #endif /* AppMacro_h */

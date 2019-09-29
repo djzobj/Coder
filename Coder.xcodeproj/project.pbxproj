@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		980758DBA63FF3D3BE6424FA /* libPods-Coder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */; };
 		E51F5D432334D42200AD6379 /* jl.docx in Resources */ = {isa = PBXBuildFile; fileRef = E51F5D422334D42200AD6379 /* jl.docx */; };
+		E5BFE0BE23404EC400617E25 /* DJZArithmeticController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0BD23404EC400617E25 /* DJZArithmeticController.m */; };
+		E5BFE0C223404F7C00617E25 /* CoreGraphicsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0C123404F7C00617E25 /* CoreGraphicsController.m */; };
+		E5BFE0C523404F9000617E25 /* GraphicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0C323404F9000617E25 /* GraphicsView.m */; };
+		E5BFE0C823404FB600617E25 /* MissDatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0C623404FB500617E25 /* MissDatabaseController.m */; };
+		E5BFE0CB23404FC600617E25 /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0C923404FC500617E25 /* ThreadViewController.m */; };
+		E5BFE0CE23404FD800617E25 /* MissWaterfallLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0CD23404FD700617E25 /* MissWaterfallLayoutController.m */; };
+		E5BFE0D123404FF200617E25 /* RuntimeViewControlelr.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0CF23404FF200617E25 /* RuntimeViewControlelr.m */; };
+		E5BFE0D42340506A00617E25 /* UIColor+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0D22340506A00617E25 /* UIColor+Extra.m */; };
+		E5BFE0D7234051BC00617E25 /* FMDBMigrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0D5234051BC00617E25 /* FMDBMigrationModel.m */; };
 		E5D4ABDF2330A9BC0088111E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D4ABDE2330A9BC0088111E /* CoreLocation.framework */; };
 		E5D4ABE32330B8300088111E /* DJZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABE22330B8300088111E /* DJZTabBarController.m */; };
 		E5D4ABE72330C11B0088111E /* DJZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABE62330C11B0088111E /* DJZHomeViewController.m */; };
@@ -41,6 +50,24 @@
 		11769A9CCAD4162C539EC1EF /* Pods-Coder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coder.release.xcconfig"; path = "Target Support Files/Pods-Coder/Pods-Coder.release.xcconfig"; sourceTree = "<group>"; };
 		16E446AFF94B155DF845D3FB /* Pods-Coder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coder.debug.xcconfig"; path = "Target Support Files/Pods-Coder/Pods-Coder.debug.xcconfig"; sourceTree = "<group>"; };
 		E51F5D422334D42200AD6379 /* jl.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = jl.docx; sourceTree = "<group>"; };
+		E5BFE0BC23404EC400617E25 /* DJZArithmeticController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZArithmeticController.h; sourceTree = "<group>"; };
+		E5BFE0BD23404EC400617E25 /* DJZArithmeticController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZArithmeticController.m; sourceTree = "<group>"; };
+		E5BFE0C023404F7C00617E25 /* CoreGraphicsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsController.h; sourceTree = "<group>"; };
+		E5BFE0C123404F7C00617E25 /* CoreGraphicsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicsController.m; sourceTree = "<group>"; };
+		E5BFE0C323404F9000617E25 /* GraphicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsView.m; sourceTree = "<group>"; };
+		E5BFE0C423404F9000617E25 /* GraphicsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsView.h; sourceTree = "<group>"; };
+		E5BFE0C623404FB500617E25 /* MissDatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissDatabaseController.m; sourceTree = "<group>"; };
+		E5BFE0C723404FB500617E25 /* MissDatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissDatabaseController.h; sourceTree = "<group>"; };
+		E5BFE0C923404FC500617E25 /* ThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
+		E5BFE0CA23404FC500617E25 /* ThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
+		E5BFE0CC23404FD700617E25 /* MissWaterfallLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissWaterfallLayoutController.h; sourceTree = "<group>"; };
+		E5BFE0CD23404FD700617E25 /* MissWaterfallLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissWaterfallLayoutController.m; sourceTree = "<group>"; };
+		E5BFE0CF23404FF200617E25 /* RuntimeViewControlelr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewControlelr.m; sourceTree = "<group>"; };
+		E5BFE0D023404FF200617E25 /* RuntimeViewControlelr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeViewControlelr.h; sourceTree = "<group>"; };
+		E5BFE0D22340506A00617E25 /* UIColor+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extra.m"; sourceTree = "<group>"; };
+		E5BFE0D32340506A00617E25 /* UIColor+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extra.h"; sourceTree = "<group>"; };
+		E5BFE0D5234051BC00617E25 /* FMDBMigrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBMigrationModel.m; sourceTree = "<group>"; };
+		E5BFE0D6234051BC00617E25 /* FMDBMigrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBMigrationModel.h; sourceTree = "<group>"; };
 		E5D4ABDE2330A9BC0088111E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E5D4ABE12330B8300088111E /* DJZTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZTabBarController.h; sourceTree = "<group>"; };
 		E5D4ABE22330B8300088111E /* DJZTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZTabBarController.m; sourceTree = "<group>"; };
@@ -123,6 +150,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E5678BD7233A1B8D002CBFEB /* Clang */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Clang;
+			sourceTree = "<group>";
+		};
+		E5BFE0BB23404E8E00617E25 /* Arithmetic */ = {
+			isa = PBXGroup;
+			children = (
+				E5BFE0BC23404EC400617E25 /* DJZArithmeticController.h */,
+				E5BFE0BD23404EC400617E25 /* DJZArithmeticController.m */,
+			);
+			path = Arithmetic;
+			sourceTree = "<group>";
+		};
+		E5BFE0BF23404F6300617E25 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				E5BFE0C023404F7C00617E25 /* CoreGraphicsController.h */,
+				E5BFE0C123404F7C00617E25 /* CoreGraphicsController.m */,
+				E5BFE0C423404F9000617E25 /* GraphicsView.h */,
+				E5BFE0C323404F9000617E25 /* GraphicsView.m */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		E5D4ABD923308BE10088111E /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +206,14 @@
 				E5D4ABE62330C11B0088111E /* DJZHomeViewController.m */,
 				E5FCC987233212B4008EF3CC /* DJZRACStudyController.h */,
 				E5FCC988233212B4008EF3CC /* DJZRACStudyController.m */,
+				E5BFE0C723404FB500617E25 /* MissDatabaseController.h */,
+				E5BFE0C623404FB500617E25 /* MissDatabaseController.m */,
+				E5BFE0CA23404FC500617E25 /* ThreadViewController.h */,
+				E5BFE0C923404FC500617E25 /* ThreadViewController.m */,
+				E5BFE0CC23404FD700617E25 /* MissWaterfallLayoutController.h */,
+				E5BFE0CD23404FD700617E25 /* MissWaterfallLayoutController.m */,
+				E5BFE0D023404FF200617E25 /* RuntimeViewControlelr.h */,
+				E5BFE0CF23404FF200617E25 /* RuntimeViewControlelr.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -260,6 +322,9 @@
 		E5EF4147232F634E00A319EC /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				E5BFE0BF23404F6300617E25 /* Graphics */,
+				E5BFE0BB23404E8E00617E25 /* Arithmetic */,
+				E5678BD7233A1B8D002CBFEB /* Clang */,
 				E5FCC98A233221A7008EF3CC /* WebView */,
 				E5D4ABE42330C0F80088111E /* Home */,
 				E5D4ABE02330B7E10088111E /* Launch */,
@@ -280,6 +345,8 @@
 		E5EF4149232F636E00A319EC /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E5BFE0D32340506A00617E25 /* UIColor+Extra.h */,
+				E5BFE0D22340506A00617E25 /* UIColor+Extra.m */,
 				E5D4ABEB2330D40D0088111E /* UIViewController+Navigation.h */,
 				E5D4ABEC2330D40D0088111E /* UIViewController+Navigation.m */,
 			);
@@ -289,6 +356,8 @@
 		E5EF414A232F637B00A319EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E5BFE0D6234051BC00617E25 /* FMDBMigrationModel.h */,
+				E5BFE0D5234051BC00617E25 /* FMDBMigrationModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,22 +533,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D4ABE32330B8300088111E /* DJZTabBarController.m in Sources */,
+				E5BFE0C523404F9000617E25 /* GraphicsView.m in Sources */,
+				E5BFE0D42340506A00617E25 /* UIColor+Extra.m in Sources */,
 				E5EF4155232F81ED00A319EC /* DJZLoginViewModel.m in Sources */,
 				E5D4ABE72330C11B0088111E /* DJZHomeViewController.m in Sources */,
 				E5FCC97F233203FE008EF3CC /* CTMediator.m in Sources */,
 				E5FCC98323320452008EF3CC /* CTMediator+LoginAction.m in Sources */,
+				E5BFE0C823404FB600617E25 /* MissDatabaseController.m in Sources */,
 				E5EF4152232F81CD00A319EC /* DJZNetWorking.m in Sources */,
 				E5FCC98D23322233008EF3CC /* DJZUIWebViewController.m in Sources */,
 				E5D4ABEA2330D1BD0088111E /* DJZNavigationController.m in Sources */,
 				E5EF4138232F5F3D00A319EC /* main.m in Sources */,
 				E5D4ABED2330D40D0088111E /* UIViewController+Navigation.m in Sources */,
 				E5FCC9902332224B008EF3CC /* DJZWKWebViewController.m in Sources */,
+				E5BFE0D123404FF200617E25 /* RuntimeViewControlelr.m in Sources */,
 				E5FCC986233204F4008EF3CC /* DJZTarget_Login.m in Sources */,
+				E5BFE0CE23404FD800617E25 /* MissWaterfallLayoutController.m in Sources */,
 				E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */,
 				E5FCC989233212B4008EF3CC /* DJZRACStudyController.m in Sources */,
+				E5BFE0D7234051BC00617E25 /* FMDBMigrationModel.m in Sources */,
+				E5BFE0BE23404EC400617E25 /* DJZArithmeticController.m in Sources */,
 				E5EF412A232F5F3C00A319EC /* AppDelegate.m in Sources */,
 				E5EF414F232F813E00A319EC /* DJZLoginViewController.m in Sources */,
 				E5D4ABF32330D9190088111E /* DJZXMLParserController.m in Sources */,
+				E5BFE0CB23404FC600617E25 /* ThreadViewController.m in Sources */,
+				E5BFE0C223404F7C00617E25 /* CoreGraphicsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

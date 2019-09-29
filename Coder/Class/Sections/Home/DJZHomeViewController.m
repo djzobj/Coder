@@ -8,6 +8,7 @@
 
 #import "DJZHomeViewController.h"
 #import "CTMediator+LoginAction.h"
+#import <QYSDK.h>
 
 typedef NS_ENUM(NSUInteger, DJZLoginType) {
     DJZLoginTypePhone,
@@ -34,10 +35,16 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _datas = @[@"DJZLoginViewController", @"DJZXMLParserController", @"DJZRACStudyController", @"DJZUIWebViewController", @"DJZWKWebViewController"];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view.mas_left);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop);
+        make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
     }];
+    QYUserInfo *userInfo = [QYUserInfo new];
+    userInfo.userId = @"";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
