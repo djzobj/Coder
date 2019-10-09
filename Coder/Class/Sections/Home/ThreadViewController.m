@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
     self.isKeepAlive = YES;
     CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
         switch (activity) {
@@ -55,19 +56,14 @@
     self.aliveThead = thread;
     dispatch_queue_t barrierQueue = dispatch_queue_create("", DISPATCH_QUEUE_CONCURRENT);
     
-    dispatch_barrier_async(barrierQueue, ^{
-        NSLog(@"%@  1111111111111", [NSThread currentThread]);
+    dispatch_async(barrierQueue, ^{
+        [self performSelector:@selector(test) withObject:nil afterDelay:2];
+        [[NSRunLoop currentRunLoop] run];
     });
-    dispatch_barrier_async(barrierQueue, ^{
-        NSLog(@"%@   22222222222", [NSThread currentThread]);
-        [NSThread sleepForTimeInterval:3];
-    });
-    dispatch_barrier_async(barrierQueue, ^{
-        NSLog(@"%@  3333333", [NSThread currentThread]);
-    });
-    dispatch_barrier_async(barrierQueue, ^{
-        NSLog(@"4444444444");
-    });
+}
+
+- (void)test {
+    NSLog(@"test");
 }
 
 - (void)initTicket {
