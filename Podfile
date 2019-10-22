@@ -9,6 +9,6 @@ target 'Coder' do
   pod 'ReactiveObjC', '~> 3.0.0'
   pod 'FMDB'
   pod 'FMDBMigrationManager'
-  #pod 'DWAlertController'
-  #pod 'PTCardTabBar'
+  pod 'SnapKit'
+  pod 'MLeaksFinder'
 end

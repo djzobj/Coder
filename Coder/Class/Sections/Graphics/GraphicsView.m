@@ -45,34 +45,12 @@
     
 }
 
-- (void)foo {
-    NSString *str = @"abc*123";
-    NSArray *arr = [str componentsSeparatedByString:@"*"];
-    NSThread *thread = nil;
+- (id<CAAction>)actionForLayer:(CALayer *)layer forKey:(NSString *)event
+{
+    id<CAAction> obj = [super actionForLayer:layer forKey:event];
+    NSLog(@"%@",obj);
+    return obj;
 }
 
-+ (BOOL)resolveInstanceMethod:(SEL)sel {
-    return NO;
-}
-
-+ (BOOL)resolveClassMethod:(SEL)sel {
-    return NO;
-}
-
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-    return nil;
-}
-
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    return [NSMethodSignature signatureWithObjCTypes:"v@:"];
-}
-
-- (void)forwardInvocation:(NSInvocation *)anInvocation {
-    
-}
-
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    
-}
 
 @end

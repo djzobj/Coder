@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - FBRetainCycleDetector (0.1.4)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -23,10 +24,13 @@ PODS:
     - FMDB/standard (>= 2.3)
   - Masonry (1.1.0)
   - MJRefresh (3.2.0)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - ReactiveObjC (3.0.0)
   - SDWebImage (5.1.1):
     - SDWebImage/Core (= 5.1.1)
   - SDWebImage/Core (5.1.1)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -34,28 +38,36 @@ DEPENDENCIES:
   - FMDBMigrationManager
   - Masonry
   - MJRefresh
+  - MLeaksFinder
   - ReactiveObjC (~> 3.0.0)
   - SDWebImage
+  - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - FBRetainCycleDetector
     - FMDB
     - FMDBMigrationManager
     - Masonry
     - MJRefresh
+    - MLeaksFinder
     - ReactiveObjC
     - SDWebImage
+    - SnapKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FMDBMigrationManager: d52007f328ea0665e8985ca8a33500707aef084f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: da36dbd1fa29d0cb1421c347a30332d3f533b1d0
+PODFILE CHECKSUM: 545933ada3588a4fc18c0741ac530e8a4ee7d4fd
 
 COCOAPODS: 1.7.5

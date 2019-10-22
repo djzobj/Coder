@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		980758DBA63FF3D3BE6424FA /* libPods-Coder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAA67634AAD56B6CDB29546 /* libPods-Coder.a */; };
 		E51F5D432334D42200AD6379 /* jl.docx in Resources */ = {isa = PBXBuildFile; fileRef = E51F5D422334D42200AD6379 /* jl.docx */; };
+		E58E79AB2356EAC6004D78A4 /* DJZCovariantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58E79AA2356EAC6004D78A4 /* DJZCovariantViewController.m */; };
 		E5BFE0BE23404EC400617E25 /* DJZArithmeticController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0BD23404EC400617E25 /* DJZArithmeticController.m */; };
 		E5BFE0C223404F7C00617E25 /* CoreGraphicsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0C123404F7C00617E25 /* CoreGraphicsController.m */; };
 		E5BFE0C523404F9000617E25 /* GraphicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BFE0C323404F9000617E25 /* GraphicsView.m */; };
@@ -25,6 +26,7 @@
 		E5D4ABED2330D40D0088111E /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABEC2330D40D0088111E /* UIViewController+Navigation.m */; };
 		E5D4ABEF2330D5F10088111E /* ico_back_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D4ABEE2330D5F10088111E /* ico_back_gray@2x.png */; };
 		E5D4ABF32330D9190088111E /* DJZXMLParserController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D4ABF22330D9190088111E /* DJZXMLParserController.m */; };
+		E5E8E346235D80B0002EF3DD /* UIImage+Optimize.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8E345235D80B0002EF3DD /* UIImage+Optimize.m */; };
 		E5EF412A232F5F3C00A319EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4129232F5F3C00A319EC /* AppDelegate.m */; };
 		E5EF4132232F5F3D00A319EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5EF4131232F5F3D00A319EC /* Assets.xcassets */; };
 		E5EF4135232F5F3D00A319EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EF4133232F5F3D00A319EC /* LaunchScreen.storyboard */; };
@@ -34,6 +36,11 @@
 		E5EF4155232F81ED00A319EC /* DJZLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4154232F81ED00A319EC /* DJZLoginViewModel.m */; };
 		E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EF4159232F825A00A319EC /* DJZLoginView.m */; };
 		E5EF415C232F826D00A319EC /* DJZLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5EF415B232F826D00A319EC /* DJZLoginView.xib */; };
+		E5F45FF4235963FA002164ED /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F45FF3235963FA002164ED /* Test.swift */; };
+		E5F45FF72359A06D002164ED /* DJZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F45FF62359A06D002164ED /* DJZTimer.m */; };
+		E5F595722358848A00A5542D /* DJZZoomController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F595712358848A00A5542D /* DJZZoomController.m */; };
+		E5F595742358862700A5542D /* icon0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5F595732358862600A5542D /* icon0.jpg */; };
+		E5F5957723588C3C00A5542D /* YBIBImageLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F5957623588C3C00A5542D /* YBIBImageLayout.m */; };
 		E5FCC97F233203FE008EF3CC /* CTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC979233203FE008EF3CC /* CTMediator.m */; };
 		E5FCC98323320452008EF3CC /* CTMediator+LoginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC98223320452008EF3CC /* CTMediator+LoginAction.m */; };
 		E5FCC986233204F4008EF3CC /* DJZTarget_Login.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FCC985233204F4008EF3CC /* DJZTarget_Login.m */; };
@@ -50,6 +57,8 @@
 		11769A9CCAD4162C539EC1EF /* Pods-Coder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coder.release.xcconfig"; path = "Target Support Files/Pods-Coder/Pods-Coder.release.xcconfig"; sourceTree = "<group>"; };
 		16E446AFF94B155DF845D3FB /* Pods-Coder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coder.debug.xcconfig"; path = "Target Support Files/Pods-Coder/Pods-Coder.debug.xcconfig"; sourceTree = "<group>"; };
 		E51F5D422334D42200AD6379 /* jl.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = jl.docx; sourceTree = "<group>"; };
+		E58E79A92356EAC6004D78A4 /* DJZCovariantViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZCovariantViewController.h; sourceTree = "<group>"; };
+		E58E79AA2356EAC6004D78A4 /* DJZCovariantViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZCovariantViewController.m; sourceTree = "<group>"; };
 		E5BFE0BC23404EC400617E25 /* DJZArithmeticController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZArithmeticController.h; sourceTree = "<group>"; };
 		E5BFE0BD23404EC400617E25 /* DJZArithmeticController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZArithmeticController.m; sourceTree = "<group>"; };
 		E5BFE0C023404F7C00617E25 /* CoreGraphicsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsController.h; sourceTree = "<group>"; };
@@ -80,6 +89,8 @@
 		E5D4ABEE2330D5F10088111E /* ico_back_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_back_gray@2x.png"; sourceTree = "<group>"; };
 		E5D4ABF12330D9190088111E /* DJZXMLParserController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZXMLParserController.h; sourceTree = "<group>"; };
 		E5D4ABF22330D9190088111E /* DJZXMLParserController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZXMLParserController.m; sourceTree = "<group>"; };
+		E5E8E344235D80B0002EF3DD /* UIImage+Optimize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Optimize.h"; sourceTree = "<group>"; };
+		E5E8E345235D80B0002EF3DD /* UIImage+Optimize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Optimize.m"; sourceTree = "<group>"; };
 		E5EF4125232F5F3C00A319EC /* Coder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EF4128232F5F3C00A319EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E5EF4129232F5F3C00A319EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,6 +109,15 @@
 		E5EF415B232F826D00A319EC /* DJZLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DJZLoginView.xib; sourceTree = "<group>"; };
 		E5EF415D232F895E00A319EC /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		E5EF415E232F899F00A319EC /* Coder.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coder.pch; sourceTree = "<group>"; };
+		E5F45FF0235962B8002164ED /* Coder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coder-Bridging-Header.h"; sourceTree = "<group>"; };
+		E5F45FF3235963FA002164ED /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		E5F45FF52359A06D002164ED /* DJZTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZTimer.h; sourceTree = "<group>"; };
+		E5F45FF62359A06D002164ED /* DJZTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZTimer.m; sourceTree = "<group>"; };
+		E5F595702358848A00A5542D /* DJZZoomController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJZZoomController.h; sourceTree = "<group>"; };
+		E5F595712358848A00A5542D /* DJZZoomController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJZZoomController.m; sourceTree = "<group>"; };
+		E5F595732358862600A5542D /* icon0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon0.jpg; sourceTree = "<group>"; };
+		E5F5957523588C3C00A5542D /* YBIBImageLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageLayout.h; sourceTree = "<group>"; };
+		E5F5957623588C3C00A5542D /* YBIBImageLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageLayout.m; sourceTree = "<group>"; };
 		E5FCC979233203FE008EF3CC /* CTMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMediator.m; sourceTree = "<group>"; };
 		E5FCC97A233203FE008EF3CC /* CTMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTMediator.h; sourceTree = "<group>"; };
 		E5FCC98123320452008EF3CC /* CTMediator+LoginAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+LoginAction.h"; sourceTree = "<group>"; };
@@ -214,6 +234,9 @@
 				E5BFE0CD23404FD700617E25 /* MissWaterfallLayoutController.m */,
 				E5BFE0D023404FF200617E25 /* RuntimeViewControlelr.h */,
 				E5BFE0CF23404FF200617E25 /* RuntimeViewControlelr.m */,
+				E58E79A92356EAC6004D78A4 /* DJZCovariantViewController.h */,
+				E58E79AA2356EAC6004D78A4 /* DJZCovariantViewController.m */,
+				E5F45FF3235963FA002164ED /* Test.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -281,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				E5D4ABEE2330D5F10088111E /* ico_back_gray@2x.png */,
+				E5F595732358862600A5542D /* icon0.jpg */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -288,6 +312,7 @@
 		E5EF4143232F631B00A319EC /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E5F45FF82359AEE8002164ED /* Tool */,
 				E5EF414B232F638500A319EC /* Views */,
 				E5EF414A232F637B00A319EC /* Models */,
 				E5EF4149232F636E00A319EC /* Categories */,
@@ -307,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				E5EF415D232F895E00A319EC /* AppMacro.h */,
+				E5F45FF0235962B8002164ED /* Coder-Bridging-Header.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -322,6 +348,7 @@
 		E5EF4147232F634E00A319EC /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				E5F5957823588C4F00A5542D /* ImageBrowser */,
 				E5BFE0BF23404F6300617E25 /* Graphics */,
 				E5BFE0BB23404E8E00617E25 /* Arithmetic */,
 				E5678BD7233A1B8D002CBFEB /* Clang */,
@@ -349,6 +376,8 @@
 				E5BFE0D22340506A00617E25 /* UIColor+Extra.m */,
 				E5D4ABEB2330D40D0088111E /* UIViewController+Navigation.h */,
 				E5D4ABEC2330D40D0088111E /* UIViewController+Navigation.m */,
+				E5E8E344235D80B0002EF3DD /* UIImage+Optimize.h */,
+				E5E8E345235D80B0002EF3DD /* UIImage+Optimize.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -385,6 +414,26 @@
 				E5FCC985233204F4008EF3CC /* DJZTarget_Login.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E5F45FF82359AEE8002164ED /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E5F45FF52359A06D002164ED /* DJZTimer.h */,
+				E5F45FF62359A06D002164ED /* DJZTimer.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		E5F5957823588C4F00A5542D /* ImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				E5F595702358848A00A5542D /* DJZZoomController.h */,
+				E5F595712358848A00A5542D /* DJZZoomController.m */,
+				E5F5957523588C3C00A5542D /* YBIBImageLayout.h */,
+				E5F5957623588C3C00A5542D /* YBIBImageLayout.m */,
+			);
+			path = ImageBrowser;
 			sourceTree = "<group>";
 		};
 		E5FCC978233203FE008EF3CC /* CTMediator */ = {
@@ -446,6 +495,7 @@
 				TargetAttributes = {
 					E5EF4124232F5F3C00A319EC = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -477,6 +527,7 @@
 				E51F5D432334D42200AD6379 /* jl.docx in Resources */,
 				E5D4ABEF2330D5F10088111E /* ico_back_gray@2x.png in Resources */,
 				E5FCC996233226BA008EF3CC /* NativeApi.js in Resources */,
+				E5F595742358862700A5542D /* icon0.jpg in Resources */,
 				E5EF415C232F826D00A319EC /* DJZLoginView.xib in Resources */,
 				E5FCC995233226BA008EF3CC /* test.html in Resources */,
 				E5EF4132232F5F3D00A319EC /* Assets.xcassets in Resources */,
@@ -535,10 +586,14 @@
 				E5D4ABE32330B8300088111E /* DJZTabBarController.m in Sources */,
 				E5BFE0C523404F9000617E25 /* GraphicsView.m in Sources */,
 				E5BFE0D42340506A00617E25 /* UIColor+Extra.m in Sources */,
+				E5F5957723588C3C00A5542D /* YBIBImageLayout.m in Sources */,
 				E5EF4155232F81ED00A319EC /* DJZLoginViewModel.m in Sources */,
 				E5D4ABE72330C11B0088111E /* DJZHomeViewController.m in Sources */,
+				E5F45FF72359A06D002164ED /* DJZTimer.m in Sources */,
+				E58E79AB2356EAC6004D78A4 /* DJZCovariantViewController.m in Sources */,
 				E5FCC97F233203FE008EF3CC /* CTMediator.m in Sources */,
 				E5FCC98323320452008EF3CC /* CTMediator+LoginAction.m in Sources */,
+				E5E8E346235D80B0002EF3DD /* UIImage+Optimize.m in Sources */,
 				E5BFE0C823404FB600617E25 /* MissDatabaseController.m in Sources */,
 				E5EF4152232F81CD00A319EC /* DJZNetWorking.m in Sources */,
 				E5FCC98D23322233008EF3CC /* DJZUIWebViewController.m in Sources */,
@@ -547,6 +602,7 @@
 				E5D4ABED2330D40D0088111E /* UIViewController+Navigation.m in Sources */,
 				E5FCC9902332224B008EF3CC /* DJZWKWebViewController.m in Sources */,
 				E5BFE0D123404FF200617E25 /* RuntimeViewControlelr.m in Sources */,
+				E5F45FF4235963FA002164ED /* Test.swift in Sources */,
 				E5FCC986233204F4008EF3CC /* DJZTarget_Login.m in Sources */,
 				E5BFE0CE23404FD800617E25 /* MissWaterfallLayoutController.m in Sources */,
 				E5EF415A232F825A00A319EC /* DJZLoginView.m in Sources */,
@@ -558,6 +614,7 @@
 				E5D4ABF32330D9190088111E /* DJZXMLParserController.m in Sources */,
 				E5BFE0CB23404FC600617E25 /* ThreadViewController.m in Sources */,
 				E5BFE0C223404F7C00617E25 /* CoreGraphicsController.m in Sources */,
+				E5F595722358848A00A5542D /* DJZZoomController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,8 +749,14 @@
 			baseConfigurationReference = 16E446AFF94B155DF845D3FB /* Pods-Coder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PX66CL7X2G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Coder/Class/Vendors/ATAuth",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coder/Coder.pch";
 				INFOPLIST_FILE = Coder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -701,9 +764,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jianbing.qiye.gjj.beta;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Coder/Class/Vendors/ATAuth",
+					"$(PROJECT_DIR)/Coder/Class/Vendors",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianbing.qiye.gjj.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = com.jianbing.qiye.gjj.beta;
+				PROVISIONING_PROFILE_SPECIFIER = com.jianbing.qiye.gjj.test;
+				SWIFT_OBJC_BRIDGING_HEADER = "Coder/Class/Macro/Coder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -713,8 +784,14 @@
 			baseConfigurationReference = 11769A9CCAD4162C539EC1EF /* Pods-Coder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Coder/Class/Vendors/ATAuth",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coder/Coder.pch";
 				INFOPLIST_FILE = Coder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -722,9 +799,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jianbing.qiye.gjj.beta;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Coder/Class/Vendors/ATAuth",
+					"$(PROJECT_DIR)/Coder/Class/Vendors",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianbing.qiye.gjj.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coder/Class/Macro/Coder-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

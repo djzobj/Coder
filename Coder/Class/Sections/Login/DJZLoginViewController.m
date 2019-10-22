@@ -31,6 +31,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.loginView];
+    [self bindViewModel];
+}
+
+- (void)bindViewModel {
+    RAC(self.viewModel, userName) = self.loginView.userNameTF.rac_textSignal;
+    RAC(self.viewModel, password) = self.loginView.passwordTF.rac_textSignal;
+    self.loginView.loginBtn.rac_command = self.viewModel.loginCommand;
+    @weakify(self)
+    [self.viewModel.refreshUI subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        self.loginView.indicatorView.hidden = NO;
+    }];
+    [self.viewModel.refreshEndSubject subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        self.loginView.indicatorView.hidden = YES;
+    }];
 }
 
 #pragma mark get/set

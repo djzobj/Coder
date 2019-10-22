@@ -18,25 +18,4 @@
     return self;
 }
 
-- (void)setViewModel:(DJZLoginViewModel *)viewModel {
-    _viewModel = viewModel;
-    if (!viewModel) {
-        return;
-    }
-    _viewModel = viewModel;
-    RAC(viewModel, userName) = self.userNameTF.rac_textSignal;
-    RAC(viewModel, password) = self.passwordTF.rac_textSignal;
-    self.loginBtn.rac_command = self.viewModel.loginCommand;
-    @weakify(self)
-    [viewModel.refreshUI subscribeNext:^(id  _Nullable x) {
-        @strongify(self)
-        self.indicatorView.hidden = NO;
-    }];
-    [viewModel.refreshEndSubject subscribeNext:^(id  _Nullable x) {
-        @strongify(self)
-        self.indicatorView.hidden = YES;
-    }];
-
-}
-
 @end

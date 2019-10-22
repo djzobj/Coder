@@ -18,9 +18,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    _TF = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 30)];
+    _TF = [UITextField new];
+    _TF.backgroundColor = [UIColor lightGray];
+    _TF.translatesAutoresizingMaskIntoConstraints = NO;
     _TF.placeholder = @"xxx";
     [self.view addSubview:_TF];
+    [_TF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(100);
+        make.top.mas_equalTo(50);
+        make.width.mas_equalTo(200);
+        make.height.mas_equalTo(30);
+    }];
     
     RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
@@ -46,39 +54,45 @@
     [signal subscribeError:^(NSError * _Nullable error) {
         NSLog(@"%@",error);
     }];
-    [self test];
+    [self flattern];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-- (void)test {
-    //创建信号
-    RACSubject *subject = [RACSubject subject];
-    RACSubject *signal = [RACSubject subject];
-    //take:取前面几个值
-    //在没到第三个时就遇到[subject sendCompleted];那么就会停止发送信号
-    [[subject take:3] subscribeNext:^(id x) {
-        NSLog(@"%@", x);
+- (void)replay {
+    RACReplaySubject *subject = [RACReplaySubject replaySubjectWithCapacity:2];
+    [subject sendNext:@"111"];
+    [subject sendNext:@"222"];
+    [subject sendNext:@"333"];
+    [subject subscribeNext:^(id  _Nullable x) {
+        NSLog(@"第一个订阅者接收到的数据%@",x);
     }];
-    //takeLast:取后面多少个值,必须发送完成
-    //只有[subject sendCompleted];才会发送信号
-    [[subject takeLast:2] subscribeNext:^(id x) {
-        NSLog(@"%@", x);
+    [subject subscribeNext:^(id  _Nullable x) {
+        NSLog(@"第二个订阅者接收到的数据%@",x);
     }];
-    //takeUntil:只要传入的信号发送完成或者signal发送信号,就不会再接收信号的内容
-    [[subject takeUntil:signal] subscribeNext:^(id x) {
-        NSLog(@"%@", x);
+}
+
+- (void)flattern {
+    // 创建信号中的信号
+    RACSubject *signalOfsignals = [RACSubject subject];
+    [[signalOfsignals flattenMap:^RACSignal *(id value) {
+       
+        value = [NSString stringWithFormat:@"htl%@", value];
+        
+        return [RACSignal return:value];
+       
+    }] subscribeNext:^(id x) {
+
+        NSLog(@"%@aaa",x);
     }];
-    //发送任意数据
-    [subject sendNext:@1];
-    [subject sendNext:@"HMJ"];
-    [subject sendNext:@3];
-    [subject sendCompleted];
-    [subject sendNext:@4];
-    [signal sendNext:@"signal"];
-    
+
+    // 信号的信号发送信号
+    [signalOfsignals sendNext:@"1111"];
+}
+
+- (void)bind {
     RACSignal *orgSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [subscriber sendNext:@(1)];
         [subscriber sendNext:@(2)];
@@ -103,6 +117,11 @@
     }];
     [newSignal subscribeNext:^(id  _Nullable x) {
         
+    }];
+    [[orgSignal map:^id _Nullable(id  _Nullable value) {
+        return nil;
+    }] subscribeNext:^(id  _Nullable x) {
+
     }];
 }
 
@@ -186,6 +205,9 @@
 {
     RACSubject *signalOfSignal = [RACSubject subject];
     RACSubject *signal = [RACSubject subject];
+    RACSubject *signal2 = [RACSubject subject];
+    RACSubject *signal3 = [RACSubject subject];
+    RACSubject *signal4 = [RACSubject subject];
     // 获取信号中信号最近发出信号，订阅最近发出的信号。
     // 注意switchToLatest：只能用于信号中的信号
     //订阅信号
@@ -194,7 +216,13 @@
     }];
     //发送信号
     [signalOfSignal sendNext:signal];
-    [signal sendNext:@"signal"];
+    [signalOfSignal sendNext:signal2];
+    [signalOfSignal sendNext:signal3];
+    [signalOfSignal sendNext:signal4];
+    [signal sendNext:@"1"];
+    [signal2 sendNext:@"2"];
+    [signal3 sendNext:@"3"];
+    [signal4 sendNext:@"4"];
 }
 
 - (void)skip

@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
     [self createTable];
     [self addEventButton];
 }
@@ -113,10 +114,9 @@
 
 - (void)insertAction {
     [_db open];
-    NSArray *names = @[@"张三", @"李四", @"网二"];
-    for (NSString *name in names) {
+    for (NSInteger i = 1; i < 50; i ++) {
         NSString *sql = @"insert into t_student(name, age, sex) values (?, ?, ?)";
-        BOOL result = [_db executeUpdate:sql, name, @(20), @"男"];
+        BOOL result = [_db executeUpdate:sql, [NSString stringWithFormat:@"%@", @(i)], @(i), @"男"];
         if (result) {
             NSLog(@"添加成功");
         }else{
@@ -128,7 +128,7 @@
 
 - (void)deleteAction {
     [_db open];
-    BOOL result = [_db executeUpdate:@"delete from t_student where name = ?", @"张三"];
+    BOOL result = [_db executeUpdate:@"delete from t_student"];
     if (result) {
         NSLog(@"删除成功");
     } else {
@@ -153,11 +153,12 @@
 
 - (void)queryAction {
     [_db open];
-    FMResultSet *resultSet= [_db executeQuery:@"select name, age from t_student where name like '张%'"];
+    FMResultSet *resultSet= [_db executeQuery:@"select * from t_student limit 45,10"];
     if (resultSet) {
         while ([resultSet next]) {
+            NSString *ID = [resultSet stringForColumn:@"id"];
             NSString *name = [resultSet stringForColumn:@"name"];
-            NSLog(@"----- name == %@", name);
+            NSLog(@"----- id == %@   name == %@", ID, name);
         }
     }
 }

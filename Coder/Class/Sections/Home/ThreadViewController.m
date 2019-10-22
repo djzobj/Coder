@@ -54,12 +54,6 @@
     [thread start];
    
     self.aliveThead = thread;
-    dispatch_queue_t barrierQueue = dispatch_queue_create("", DISPATCH_QUEUE_CONCURRENT);
-    
-    dispatch_async(barrierQueue, ^{
-        [self performSelector:@selector(test) withObject:nil afterDelay:2];
-        [[NSRunLoop currentRunLoop] run];
-    });
 }
 
 - (void)test {
@@ -98,6 +92,7 @@
     while (self && self.isKeepAlive) {
         [runloop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
+    NSLog(@"thread sleep");
 }
 
 - (void)threadAliveTest {
