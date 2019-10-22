@@ -43,7 +43,7 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
         make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop);
         make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
     }];
-    
+    NSLog(@"");
 }
 
 - (void)viewWillAppear:(BOOL)animated {
