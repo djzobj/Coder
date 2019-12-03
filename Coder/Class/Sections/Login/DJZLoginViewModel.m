@@ -36,9 +36,9 @@
         }];
         [_loginCommand.executionSignals subscribeNext:^(RACSignal *_Nullable x) {
             @strongify(self)
-            [self.refreshUI sendNext:@"正在请求数据"];
+            [self.refreshUI sendNext:@(YES)];
             [x subscribeNext:^(id  _Nullable x) {
-                [self.refreshEndSubject sendNext:@"数据请求完成"];
+                [self.refreshUI sendNext:@(NO)];
             }];
         }];
     }

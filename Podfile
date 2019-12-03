@@ -1,6 +1,7 @@
 source 'git@github.com:CocoaPods/Specs.git'
 platform :ios, '9.0'
 
+use_frameworks!
 target 'Coder' do
   pod 'Masonry'
   pod 'SDWebImage'

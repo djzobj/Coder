@@ -1,4 +1,4 @@
-module Pods_Coder {
+framework module Pods_Coder {
   umbrella header "Pods-Coder-umbrella.h"
 
   export *

@@ -77,6 +77,13 @@
 - (void)flattern {
     // 创建信号中的信号
     RACSubject *signalOfsignals = [RACSubject subject];
+    
+    [signalOfsignals map:^id _Nullable(id  _Nullable value) {
+        
+        return nil;
+        
+    }];
+    
     [[signalOfsignals flattenMap:^RACSignal *(id value) {
        
         value = [NSString stringWithFormat:@"htl%@", value];
@@ -85,7 +92,7 @@
        
     }] subscribeNext:^(id x) {
 
-        NSLog(@"%@aaa",x);
+        NSLog(@"%@",x);
     }];
 
     // 信号的信号发送信号
