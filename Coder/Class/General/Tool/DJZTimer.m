@@ -10,13 +10,9 @@
 
 @interface DJZTimerForwarder : NSObject
 
-- (instancetype)initWithWorker:(id)worker;
-
-@end
-
-@interface DJZTimerForwarder ()
-
 @property (nonatomic, weak) id worker;
+
+- (instancetype)initWithWorker:(id)worker;
 
 @end
 

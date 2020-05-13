@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DJZBaseVC.h"
 
-@interface MissDatabaseController : UIViewController
+@interface MissDatabaseController : DJZBaseVC
 
 @end

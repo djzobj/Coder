@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DJZBaseVC.h"
 
-@interface CoreGraphicsController : UIViewController
+@interface CoreGraphicsController : DJZBaseVC
 
 @end

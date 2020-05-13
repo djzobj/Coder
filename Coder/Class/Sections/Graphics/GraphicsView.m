@@ -14,7 +14,6 @@
 
 @implementation GraphicsView
 
-
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     CGFloat originX = rect.size.width/2;
@@ -52,5 +51,12 @@
     return obj;
 }
 
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    return [super pointInside:point withEvent:event];
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    return [super hitTest:point withEvent:event];
+}
 
 @end

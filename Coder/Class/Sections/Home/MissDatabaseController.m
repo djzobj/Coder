@@ -88,28 +88,19 @@
     }else{
         NSLog(@"数据库打开失败");
     }
-    FMDBMigrationManager *manager = [FMDBMigrationManager managerWithDatabaseAtPath:path migrationsBundle:[NSBundle mainBundle]];
-    FMDBMigrationModel *migration_1 = [[FMDBMigrationModel alloc] initWithName:@"addUserTable" andVersion:1 andExecuteUpdateArray:@[@"create table User(name text,age integer,sex text,phoneNum text)"]];
-    [manager addMigration:migration_1];
-    BOOL resultState=NO;
-    NSError * error=nil;
-    if (!manager.hasMigrationsTable) {
-        resultState=[manager createMigrationsTable:&error];
-    }
-    //UINT64_MAX 表示升级到最高版本
-    resultState=[manager migrateDatabaseToVersion:UINT64_MAX progress:nil error:&error];
-    
     [_db open];
-    NSString *sql = @"insert into User(name, age, sex, phoneNum) values (?, ?, ?, ?)";
-    [_db executeUpdate:sql, @"张三", @(27), @"男", @"15157103462"];
-    FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:path];
-    [queue inDatabase:^(FMDatabase * _Nonnull db) {
-        NSLog(@"%@", [NSThread currentThread]);
-    }];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-    });
+   
+//    FMDBMigrationManager *manager = [FMDBMigrationManager managerWithDatabaseAtPath:path migrationsBundle:[NSBundle mainBundle]];
+//    FMDBMigrationModel *migration_1 = [[FMDBMigrationModel alloc] initWithName:@"version1" andVersion:1 andExecuteUpdateArray:@[@"alter table t_student rename to t_student_bak", @"create table if not exists student(id integer primary key autoincrement, name text, age integer, sex text)", @"insert into student(name, age, sex) select name, age, sex from t_student_bak", @"drop table if exists t_student_bak"]];
+//    [manager addMigration:migration_1];
+//    BOOL resultState=NO;
+//    NSError * error=nil;
+//    if (!manager.hasMigrationsTable) {
+//        resultState=[manager createMigrationsTable:&error];
+//    }
+//    //UINT64_MAX 表示升级到最高版本
+//    resultState=[manager migrateDatabaseToVersion:UINT64_MAX progress:nil error:&error];
+    NSLog(@"");
 }
 
 - (void)insertAction {

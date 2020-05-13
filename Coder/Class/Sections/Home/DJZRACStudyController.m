@@ -21,7 +21,6 @@
     _TF = [UITextField new];
     _TF.backgroundColor = [UIColor lightGray];
     _TF.translatesAutoresizingMaskIntoConstraints = NO;
-    _TF.placeholder = @"xxx";
     [self.view addSubview:_TF];
     [_TF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(100);
@@ -29,36 +28,70 @@
         make.width.mas_equalTo(200);
         make.height.mas_equalTo(30);
     }];
-    
-    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        
-        //subscriber并不是一个对象
-        //3. 发送信号
-        [subscriber sendNext:@"send one Message"];
-        
-        //发送error信号
-        NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:1001 userInfo:@{@"errorMsg":@"this is a error message"}];
-        [subscriber sendError:error];
-        
-        //4. 销毁信号
-        return [RACDisposable disposableWithBlock:^{
-            NSLog(@"signal已销毁");
-        }];
-    }];
-    
-    //2.1 订阅信号
-    [signal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@",x);
-    }];
-    //2.2 针对实际中可能出现的逻辑错误，RAC提供了订阅error信号
-    [signal subscribeError:^(NSError * _Nullable error) {
-        NSLog(@"%@",error);
-    }];
-    [self flattern];
+
+    [self racCommand];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)racCommand {
+    RACSignal* textSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@(1)];
+        [subscriber sendNext:@(2)];
+        [subscriber sendError:[NSError new]];
+        return nil;
+    }];
+    
+    [textSignal subscribeNext:^(id  _Nullable x) {
+        
+    }];
+    
+    RACCommand* textCommad = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+        return textSignal;
+    }];
+    
+    [textCommad.executing subscribeNext:^(id x) {
+        NSLog(@"executing%@",x);
+    }];
+    
+    [textCommad.executionSignals subscribeNext:^(id x) {
+        NSLog(@"executionSignals%@",x);
+    }];
+    
+    [[textCommad.executionSignals switchToLatest]subscribeNext:^(id x) {
+        NSLog(@"executionSignals switchLatest%@",x);
+    }];
+    
+    [textCommad.errors subscribeNext:^(id x) {
+        NSLog(@"errors");
+    }];
+    
+    [textCommad execute:@"我是button"];
+}
+
+- (void)multicastConnection {
+    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@"signal1-->🍺🍺🍺🍺🍺🍺🍺"];
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"signal1销毁了");
+        }];
+    }];
+    
+    RACMulticastConnection *connection = [signal1 publish];
+    
+    [connection.signal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribeNext-->1");
+    }];
+    [connection.signal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribeNext-->2");
+    }];
+    [connection.signal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribeNext-->3");
+    }];
+    [connection connect];
 }
 
 - (void)replay {
@@ -74,29 +107,26 @@
     }];
 }
 
-- (void)flattern {
+- (void)flattenMap {
     // 创建信号中的信号
     RACSubject *signalOfsignals = [RACSubject subject];
-    
-    [signalOfsignals map:^id _Nullable(id  _Nullable value) {
+    RACSubject *signal = [RACSubject subject];
+    [[signalOfsignals flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+        // 当signalOfsignals的signals发出信号才会调用
         
-        return nil;
+         return value;
+    }] subscribeNext:^(id  _Nullable x) {
+        // 只有signalOfsignals的signal发出信号才会调用，因为内部订阅了bindBlock中返回的信号，也就是flattenMap返回的信号。
+         // 也就是flattenMap返回的信号发出内容，才会调用。
         
-    }];
-    
-    [[signalOfsignals flattenMap:^RACSignal *(id value) {
-       
-        value = [NSString stringWithFormat:@"htl%@", value];
-        
-        return [RACSignal return:value];
-       
-    }] subscribeNext:^(id x) {
-
-        NSLog(@"%@",x);
+         NSLog(@"%@aaa",x);
     }];
 
     // 信号的信号发送信号
-    [signalOfsignals sendNext:@"1111"];
+    [signalOfsignals sendNext:signal];
+
+    // 信号发送内容
+    [signal sendNext:@1];
 }
 
 - (void)bind {
@@ -109,6 +139,7 @@
             
         }];
     }];
+  
     RACSignal *newSignal = [orgSignal bind:^RACSignalBindBlock{
         RACSignalBindBlock bindBlock = ^(id value, BOOL *stop) {
             RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
@@ -125,11 +156,6 @@
     [newSignal subscribeNext:^(id  _Nullable x) {
         
     }];
-    [[orgSignal map:^id _Nullable(id  _Nullable value) {
-        return nil;
-    }] subscribeNext:^(id  _Nullable x) {
-
-    }];
 }
 
 - (void)filter
@@ -143,11 +169,11 @@
         NSLog(@"%@", x);
     }];
     
-    [[_TF.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
-        return [NSString stringWithFormat:@"1111%@", value];
-    }] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"-----%@", x);
-    }];
+//    [[_TF.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
+//        return [NSString stringWithFormat:@"1111%@", value];
+//    }] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"-----%@", x);
+//    }];
 }
 
 - (void)ignore

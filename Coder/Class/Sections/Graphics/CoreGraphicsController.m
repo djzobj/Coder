@@ -9,6 +9,7 @@
 #import "CoreGraphicsController.h"
 #import "MissDatabaseController.h"
 #import "GraphicsView.h"
+#import "DJZInspectionView.h"
 
 @interface CoreGraphicsController (){
     GraphicsView *_circleView;
@@ -32,15 +33,29 @@
         make.centerX.mas_equalTo(0);
     }];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTest)];
+    [_circleView addGestureRecognizer:tap];
+    
     UISlider *progressView = [UISlider new];
     [progressView addTarget:self action:@selector(didSlider:) forControlEvents:UIControlEventValueChanged];
     progressView.frame = CGRectMake(50, 50, 200, 20);
     [self.view addSubview:progressView];
+    
+    DJZInspectionView *view = [[DJZInspectionView alloc] initWithFrame:self.view.bounds];
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
+    [UIView animateWithDuration:0.4 animations:^{
+        view.frame = CGRectMake(0, 0, 100, 100);
+    }];
 }
 
 - (void)didSlider:(UISlider *)slider {
     _circleView.progress = slider.value;
     [_circleView setNeedsDisplay];
+}
+
+- (void)clickTest {
+    
 }
 
 - (void)didReceiveMemoryWarning {

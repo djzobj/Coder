@@ -8,29 +8,9 @@
 
 #import "Clang.h"
 
-@interface MNPerson : NSObject
-
-@property (nonatomic, copy)NSString *name;
-
-- (void)print;
-
-@end
-
-@implementation MNPerson
-
-- (void)print{
-    NSLog(@"self.name = %@",self.name);
-}
-
-@end
-
 @implementation Clang
 
 - (void)test {
-    id cls = [MNPerson class];
-    void *obj = &cls;
-    [(__bridge id)obj print];
-    
 }
 
 @end

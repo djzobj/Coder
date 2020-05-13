@@ -10,5 +10,7 @@
 #define AppMacro_h
 
 #define kDJZScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kNavigationBarHeight (kStatusBarHeight + 44)
+#define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 
 #endif /* AppMacro_h */

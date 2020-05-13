@@ -24,7 +24,6 @@
     [super loadView];
     self.view = [UIView new];
     self.view.backgroundColor = [UIColor redColor];
-    
 }
 
 - (void)viewDidLoad {
@@ -34,6 +33,11 @@
     [self bindViewModel];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 - (void)bindViewModel {
     RAC(self.viewModel, userName) = self.loginView.userNameTF.rac_textSignal;
     RAC(self.viewModel, password) = self.loginView.passwordTF.rac_textSignal;
@@ -41,7 +45,7 @@
     @weakify(self)
     [self.viewModel.refreshUI subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        self.loginView.indicatorView.hidden = NO;
+        self.loginView.indicatorView.hidden = ![x boolValue];
     }];
     [self.viewModel.refreshEndSubject subscribeNext:^(id  _Nullable x) {
         @strongify(self)
@@ -54,6 +58,7 @@
 - (DJZLoginView *)loginView {
     if (!_loginView) {
         _loginView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(DJZLoginView.class) owner:nil options:nil].firstObject;
+        _loginView.frame = self.view.bounds;
         _loginView.viewModel = self.viewModel;
         _loginView.indicatorView.hidden = YES;
     }

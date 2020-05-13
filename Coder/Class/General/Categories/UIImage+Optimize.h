@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Optimize)
 
+- (UIImage *)renderWithColor:(UIColor *)color;
+
 @end
 
 NS_ASSUME_NONNULL_END

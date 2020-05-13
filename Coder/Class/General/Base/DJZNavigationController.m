@@ -7,8 +7,10 @@
 //
 
 #import "DJZNavigationController.h"
+#import "DJZBaseAnimation.h"
+#import "DJZBaseVC.h"
 
-@interface DJZNavigationController () <UIGestureRecognizerDelegate>
+@interface DJZNavigationController () <UINavigationControllerDelegate>
 
 @end
 
@@ -18,30 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationBar.translucent = NO;
-    self.interactivePopGestureRecognizer.delegate = self;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (BOOL)shouldAutorotate {
-    return [self.visibleViewController shouldAutorotate];
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return [self.visibleViewController supportedInterfaceOrientations];
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return [self.visibleViewController preferredInterfaceOrientationForPresentation];
-}
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if (self.viewControllers.count <= 1) {
-        return NO;
-    }
-    return YES;
+    //self.delegate = self;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
@@ -49,6 +28,23 @@
         viewController.hidesBottomBarWhenPushed = YES;
     }
     [super pushViewController:viewController animated:animated];
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(DJZBaseAnimation *)animationController {
+    return animationController.interactivePopTransition;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(DJZBaseVC *)fromVC toViewController:(DJZBaseVC *)toVC {
+    if (fromVC.interactivePopTransition) {
+        DJZBaseAnimation *animation = [DJZBaseAnimation new];
+        animation.transitionType = operation;
+        animation.interactivePopTransition = fromVC.interactivePopTransition;
+        return animation;
+    }else {
+        DJZBaseAnimation *animation = [DJZBaseAnimation new];
+        animation.transitionType = operation;
+        return animation;
+    }
 }
 
 /*

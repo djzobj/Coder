@@ -8,8 +8,12 @@
 
 #import "DJZHomeViewController.h"
 #import "CTMediator+LoginAction.h"
-
+#import <MJRefresh.h>
+#import <SDWebImage.h>
+#import <WebKit/WKWebView.h>
 #import <vector>
+#import <objc/runtime.h>
+
 using namespace std;
 
 typedef pair<NSString *, Class> RootRow;
@@ -26,30 +30,63 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
     DJZXXXTypeZ = 1 << 2,
 };
 
-@interface DJZHomeViewController ()<UITableViewDataSource, UITableViewDelegate>{
+@protocol DJZHomeViewControllerDelegate <NSObject>
+
+@property (nonatomic, assign) NSInteger index;
+
+@end
+
+@interface DJZHomeViewController ()<UITableViewDataSource, UITableViewDelegate, DJZHomeViewControllerDelegate>{
     vector<RootRow> _dataSource;
+    id _a;
 }
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, assign) NSInteger state;
+@property (nonatomic, assign) UIEdgeInsets scrollViewOriginalInset;
+@property (nonatomic, assign) BOOL hasUA;
 
 @end
 
 @implementation DJZHomeViewController
 
+@synthesize index;
+
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    return [super initWithCoder:coder];
+}
+
+- (instancetype)init {
+    
+    return [super init];
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _datas = @[@"DJZLoginViewController", @"DJZXMLParserController", @"DJZRACStudyController", @"DJZUIWebViewController", @"DJZWKWebViewController", @"DJZArithmeticController", @"ThreadViewController", @"DJZCovariantViewController", @"DJZZoomController", @"MissDatabaseController", @"SwiftTestController"];
+    _datas = @[@"DJZLoginViewController", @"CoreGraphicsController", @"DJZPageViewController",@"RuntimeViewControlelr", @"DJZXMLParserController", @"DJZRACStudyController", @"DJZUIWebViewController", @"DJZWKWebViewController", @"DJZArithmeticController", @"ThreadViewController", @"DJZCovariantViewController", @"DJZZoomController", @"MissDatabaseController", @"SwiftTestController"];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view.mas_left);
         make.right.mas_equalTo(self.view.mas_right);
-        make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop);
-        make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+        make.top.mas_equalTo(self.view.mas_top).offset(33);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
     }];
-    NSLog(@"");
+    
+    NSObject *objc = [[NSObject alloc] init];
+    NSLog(@"objc对象实际需要的内存大小: %zd", class_getInstanceSize([objc class]));
+    //NSLog(@"objc对象实际分配的内存大小: %zd", malloc_size((__bridge const void *)(objc)));
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     
 }
 
@@ -98,17 +135,24 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
     NSString *className = _datas[indexPath.row];
     UIViewController *controller = [NSClassFromString(className) new];
     if ([className isEqualToString:@"SwiftTestController"]) {
         controller = [SwiftViewController new];
+
     }
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)endRefresh {
+    self.state = 0;
 }
 
 #pragma mark get、set
 
 - (UITableView *)tableView {
+    
     if (!_tableView) {
         _tableView = [UITableView new];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -116,9 +160,16 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.estimatedRowHeight = 50;
-        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
     }
     return _tableView;
+}
+
+- (void)refresh {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self endRefresh];
+        [self.tableView.mj_header endRefreshing];
+    });
 }
 
 /*

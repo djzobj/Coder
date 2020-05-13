@@ -7,8 +7,22 @@
 //
 
 #import "UIImage+Optimize.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @implementation UIImage (Optimize)
+
+- (UIImage *)renderWithColor:(UIColor *)color {
+    CGRect rect = (CGRect){CGPointZero, self.size};
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self drawInRect:rect];
+    CGContextSetBlendMode(context, kCGBlendModeSourceAtop);
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 - (UIImage *)thumbnailImageForPath:(NSString *)path imageSize:(int)imageSize {
     CGImageRef thumbnailImage;

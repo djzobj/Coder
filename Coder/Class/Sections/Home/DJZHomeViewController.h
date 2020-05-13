@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DJZBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DJZHomeViewController : UIViewController
+@interface DJZHomeViewController : DJZBaseVC
 
 @end
 

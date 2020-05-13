@@ -17,18 +17,6 @@
     [self addItems];
 }
 
-- (BOOL)shouldAutorotate{
-    return [self.selectedViewController shouldAutorotate];
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return [self.selectedViewController supportedInterfaceOrientations];
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    return [self.selectedViewController preferredInterfaceOrientationForPresentation];
-}
-
 - (void)addItems {
     DJZNavigationController *navigationController = [[DJZNavigationController alloc] initWithRootViewController:[DJZHomeViewController new]];
     navigationController.tabBarItem.title = @"首页";

@@ -20,11 +20,19 @@
 
 @implementation DJZWKWebViewController
 
++ (void)load {
+    __block id observer = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidFinishLaunchingNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+       // [self prepareWebView];
+        [[NSNotificationCenter defaultCenter] removeObserver:observer];
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self addWbView];
+    NSURLProtocol *protocol = nil;
 }
 
 - (void)addWbView {
@@ -57,18 +65,20 @@
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
     self.webView.allowsLinkPreview = YES; //允许链接3D Touch
-    self.webView.customUserAgent = @"WebViewDemo/1.0.0";    //自定义UA
-    self.webView.scrollView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
-    //史诗级神坑，为何如此写呢？参考https://opensource.apple.com/source/WebKit2/WebKit2-7600.1.4.11.10/ChangeLog   以及我博客中的介绍
-    [self.webView setValue:[NSValue valueWithUIEdgeInsets:self.webView.scrollView.contentInset] forKey:@"_obscuredInsets"];
     
     [self.view addSubview:self.webView];
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     //图片添加点击事件
     [self imgAddClickEvent];
     //添加NativeApi
     [self addNativeApiToJS];
 
-    [self loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"]]]];
+    [self loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"]]]];
+//    NSString *url = @"https://test.jianbing.com/webserve/channel/loan/index?from=loan_channel";
+//    url = [url stringByReplacingOccurrencesOfString:@"https" withString:@"djzHost"];
+//    [self loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
 }
 
 - (void)loadRequest:(NSURLRequest *)request {
@@ -86,6 +96,23 @@
     NSMutableURLRequest *mRequest = request.mutableCopy;
     [mRequest addValue:cookieValue forHTTPHeaderField:@"Cookie"];
     [_webView loadRequest:mRequest];
+}
+
+- (NSURLRequest *)fixNewRequestCookieWithRequest:(NSURLRequest *)originalRequest{
+    NSMutableURLRequest *fixedRequest;
+    if ([originalRequest isKindOfClass:[NSMutableURLRequest class]]) {
+        fixedRequest = (NSMutableURLRequest *)originalRequest;
+    } else {
+        fixedRequest = originalRequest.mutableCopy;
+    }
+    //防止Cookie丢失
+    NSDictionary *dict = [NSHTTPCookie requestHeaderFieldsWithCookies:[NSHTTPCookieStorage sharedHTTPCookieStorage].cookies];
+    if (dict.count) {
+        NSMutableDictionary *mDict = originalRequest.allHTTPHeaderFields.mutableCopy;
+        [mDict setValuesForKeysWithDictionary:dict];
+        fixedRequest.allHTTPHeaderFields = mDict;
+    }
+    return fixedRequest;
 }
 
 - (void)dealloc

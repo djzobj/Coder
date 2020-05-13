@@ -1,8 +1,8 @@
 //
-//  UIViewController+Navigation.h
+//  DJZPageTableView.h
 //  Coder
 //
-//  Created by 张得军 on 2019/9/17.
+//  Created by 张得军 on 2019/12/20.
 //  Copyright © 2019 张得军. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (Navigation)
+@interface DJZPageTableView : UITableView
 
 @end
 

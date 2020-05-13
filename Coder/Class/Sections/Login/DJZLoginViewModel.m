@@ -32,7 +32,8 @@
         @weakify(self)
         _loginCommand = [[RACCommand alloc] initWithEnabled:loginBtnEnable signalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             @strongify(self)
-            return [DJZNetWorking loginWithUserName:self.userName password:self.password];
+            RACSignal *signal = [DJZNetWorking loginWithUserName:self.userName password:self.password];
+            return signal;
         }];
         [_loginCommand.executionSignals subscribeNext:^(RACSignal *_Nullable x) {
             @strongify(self)

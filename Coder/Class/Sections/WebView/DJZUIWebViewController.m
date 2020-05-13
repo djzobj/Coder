@@ -22,7 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://activity-1.m.duiba.com.cn/hdtool/index?id=3721052&appKey=U9smCw8qARxWTzoSvL41McNWiRu&openBs=openbs"]]];
+    NSMutableURLRequest *mRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://test.jianbing.com/webserve/channel/loan/index?from=loan_channel"]];
+        mRequest.HTTPMethod = @"POST";
+        NSData *data = [@"xxxxx" dataUsingEncoding:NSUTF8StringEncoding];
+        mRequest.HTTPBody = data;
+    [self.webView loadRequest:mRequest];
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);

@@ -16,17 +16,64 @@ struct Node {
     struct Node * next;
 };
 
-@interface DJZArithmeticController ()
+@protocol DJZArithmeticControllerDeleagte <NSObject>
+
+@property (nonatomic, assign) NSInteger index;
 
 @end
 
+@interface DJZArithmeticController ()<DJZArithmeticControllerDeleagte>
+
+@end
+
+#define WeakObject(obj) __weak typeof(obj) weak_##obj = obj;
+
 @implementation DJZArithmeticController
+
+@synthesize index;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self charReverse];
-    [self listReverse];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    NSObject *a = [NSObject new];
+    WeakObject(a);
+    NSLog(@"-----%@", weak_a);
+    
+}
+
+char findFirstChar(char *cha) {
+    char result = '\0';
+    int array[256];
+    for (int i = 0; i < 256; i ++) {
+        array[i] = 0;
+    }
+    char *p = cha;
+    //遍历每个字符，对出现的位置+1
+    while (*p != '\0') {
+        array[*(p++)]++;
+    }
+    
+    p = cha;
+    while (*p != '\0') {
+        if (array[*p] == 1) {
+            result = *p;
+            break;
+        }
+        p++;
+    }
+    return result;
+}
+
+void char_reserve(char *cha) {
+    char *begin = cha;
+    char *end = cha + strlen(cha) - 1;
+    while (begin < end) {
+        char temp = *begin;
+        *(begin ++) = *end;
+        *(end --) = temp;
+    }
 }
 
 - (void)orderListMerge
@@ -151,44 +198,6 @@ struct Node {
     return head;
 }
 
-- (void)charReverse
-{
-    NSString * string = @"hello,world";
-    
-    NSLog(@"%@",string);
-    
-    NSMutableString * reverString = [NSMutableString stringWithString:string];
-    
-    for (NSInteger i = 0; i < (string.length + 1)/2; i++) {
-        
-        [reverString replaceCharactersInRange:NSMakeRange(i, 1) withString:[string substringWithRange:NSMakeRange(string.length - i - 1, 1)]];
-        
-        [reverString replaceCharactersInRange:NSMakeRange(string.length - i - 1, 1) withString:[string substringWithRange:NSMakeRange(i, 1)]];
-    }
-    
-    NSLog(@"reverString:%@",reverString);
-    
-    //C
-    char ch[100];
-    
-    memcpy(ch, [string cStringUsingEncoding:NSUTF8StringEncoding], [string length]);
-
-   //设置两个指针，一个指向字符串开头，一个指向字符串末尾
-    char * begin = ch;
-    
-    char * end = ch + strlen(ch) - 1;
-    //遍历字符数组，逐步交换两个指针所指向的内容，同时移动指针到对应的下个位置，直至begin>=end
-        while (begin < end) {
-            
-            char temp = *begin;
-            
-            *(begin++) = *end;
-            
-            *(end--) = temp;
-        }
-        
-        NSLog(@"reverseChar[]:%s",ch);
-}
 
 int BinarySearch(int array[], int n, int value)
 {
