@@ -13,9 +13,30 @@
 #import <FMDBMigrationManager.h>
 #import "FMDBMigrationModel.h"
 
+
+/*SELECT * from sqlite_master WHERE type='table'
+ 
+ -- 把t_message表修改为t_message_bak表
+ ALTER TABLE t_message RENAME TO t_message_bak
+ 
+ -- 获取t_message_bak表的字段信息
+ PRAGMA table_info('t_message_bak')
+ 
+ 使用子查询进行数据迁移处理
+ INSERT INTO t_message(messageID, messageType, messageJsonContent, retriveTimeString, postTimeString, readState) SELECT messageID, messageType, messageJsonContent, retriveTimeString, postTimeString, readState FROM t_message_bak
+ 
+ DROP TABLE IF EXISTS t_message_bak
+ 
++-------+---------------+---------------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| type  | name          | tbl_name      | rootpage | sql                                                                                                                                                                                                                   |
++-------+---------------+---------------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| table | t_message_bak | t_message_bak | 2        | CREATE TABLE "t_message_bak" (messageID TEXT, messageType INTEGER, messageJsonContent TEXT, retriveTimeString INTEGER, postTimeString INTEGER, readState INTEGER, PRIMARY KEY(messageID))                             |
+| table | t_message     | t_message     | 4        |*/
+
 @interface MissDatabaseController ()
 
 @property (nonatomic, strong) FMDatabase *db;
+@property (nonatomic, strong) FMDatabaseQueue *dbQueue;
 
 @end
 
@@ -76,6 +97,7 @@
     NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     path = [path stringByAppendingPathComponent:@"student.sqlite"];
     _db = [FMDatabase databaseWithPath:path];
+    _dbQueue = [FMDatabaseQueue databaseQueueWithPath:path];
     if ([_db open]) {
         NSString *sql = @"create table if not exists t_student(id integer primary key autoincrement, name text, age integer, sex text)";
         BOOL success = [_db executeUpdate:sql];
@@ -105,6 +127,9 @@
 
 - (void)insertAction {
     [_db open];
+    [_dbQueue inDatabase:^(FMDatabase * _Nonnull db) {
+        
+    }];
     for (NSInteger i = 1; i < 50; i ++) {
         NSString *sql = @"insert into t_student(name, age, sex) values (?, ?, ?)";
         BOOL result = [_db executeUpdate:sql, [NSString stringWithFormat:@"%@", @(i)], @(i), @"男"];

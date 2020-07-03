@@ -36,10 +36,10 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTest)];
     [_circleView addGestureRecognizer:tap];
     
-    UISlider *progressView = [UISlider new];
-    [progressView addTarget:self action:@selector(didSlider:) forControlEvents:UIControlEventValueChanged];
-    progressView.frame = CGRectMake(50, 50, 200, 20);
-    [self.view addSubview:progressView];
+    UISlider *slider = [UISlider new];
+    [slider addTarget:self action:@selector(didSlider:) forControlEvents:UIControlEventValueChanged];
+    slider.frame = CGRectMake(50, 50, 200, 20);
+    [self.view addSubview:slider];
     
     DJZInspectionView *view = [[DJZInspectionView alloc] initWithFrame:self.view.bounds];
     view.backgroundColor = [UIColor whiteColor];

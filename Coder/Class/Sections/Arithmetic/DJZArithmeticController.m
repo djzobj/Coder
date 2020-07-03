@@ -41,6 +41,61 @@ struct Node {
     WeakObject(a);
     NSLog(@"-----%@", weak_a);
     
+    [self insertSortArray];
+    
+}
+
+char *stringCode(char *inputCode) {
+    int length = (int)strlen(inputCode);
+    int size = 50;
+    char *stack = (char *)malloc(sizeof(char) * size);
+    int top = -1;
+    for (int i = 0; i < length; i ++) {
+        char temp = inputCode[i];
+        if (temp != ']') {
+            if (top == size - 1) {
+                stack = realloc(stack, (size += 50) * sizeof(char));
+            }
+            stack[++top] = inputCode[i];
+        }else{
+            int tempSize = 10;
+            int tempTop = -1;
+            char *tempCode = (char *)malloc(sizeof(char) * tempSize);
+            while (stack[top] != '[') {
+                if (tempTop == tempSize - 1) {
+                    tempCode = realloc(tempCode, (tempSize + 10) * sizeof(char));
+                }
+                tempTop ++;
+                tempCode[tempTop] = stack[top];
+                top --;
+            }
+            char strInt[11];
+            int curTop = top;
+            top --;
+            while (top != -1 && stack[top] >= '0' && stack[top] <= '9') {
+                top --;
+            }
+            for (int j = top + 1; j < curTop; j ++) {
+                strInt[j - (top + 1)] = stack[j];
+            }
+            strInt[curTop] = '\0';
+            int curNum = atoi(strInt);
+            for (int k = 0; k < curNum; k ++) {
+                int kk = tempTop;
+                while (kk != -1) {
+                    if (top == size - 1) {
+                        stack = realloc(stack, (size + 50) * sizeof(char));
+                    }
+                    top ++;
+                    stack[top] = tempCode[kk];
+                    kk --;
+                }
+            }
+            free(tempCode);
+            tempCode = NULL;
+        }
+    }
+    return stack;
 }
 
 char findFirstChar(char *cha) {

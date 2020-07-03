@@ -13,6 +13,7 @@
 #import <WebKit/WKWebView.h>
 #import <vector>
 #import <objc/runtime.h>
+#import "Aspects.h"
 
 using namespace std;
 
@@ -33,6 +34,32 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
 @protocol DJZHomeViewControllerDelegate <NSObject>
 
 @property (nonatomic, assign) NSInteger index;
+
+@end
+
+@interface TestCopy : NSObject <NSCopying>{
+    NSString *_a;
+}
+
+@end
+
+@implementation TestCopy
+
+- (id)copyWithZone:(NSZone *)zone{
+    return [TestCopy new];
+}
+
+
+@end
+
+@interface TestCopySub : TestCopy <NSCopying>{
+    
+}
+
+@end
+
+@implementation TestCopySub
+
 
 @end
 
@@ -70,7 +97,7 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _datas = @[@"DJZLoginViewController", @"CoreGraphicsController", @"DJZPageViewController",@"RuntimeViewControlelr", @"DJZXMLParserController", @"DJZRACStudyController", @"DJZUIWebViewController", @"DJZWKWebViewController", @"DJZArithmeticController", @"ThreadViewController", @"DJZCovariantViewController", @"DJZZoomController", @"MissDatabaseController", @"SwiftTestController"];
+    _datas = @[@"DJZLoginViewController", @"CoreGraphicsController", @"DJZPageViewController",@"RuntimeViewControlelr", @"DJZXMLParserController", @"DJZRACStudyController", @"DJZUIWebViewController", @"DJZWKWebViewController", @"DJZArithmeticController", @"ThreadViewController", @"DJZCovariantViewController", @"DJZZoomController", @"MissDatabaseController", @"DJZAnimationVC", @"DJZScrollVC", @"SwiftTestController"];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -84,13 +111,24 @@ typedef NS_OPTIONS(NSUInteger, DJZXXXType) {
     NSLog(@"objc对象实际需要的内存大小: %zd", class_getInstanceSize([objc class]));
     //NSLog(@"objc对象实际分配的内存大小: %zd", malloc_size((__bridge const void *)(objc)));
     
+    UIImageView *icon = [UIImageView new];
+    [icon sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591093413462&di=0242059bc607719aeba913d83667464f&imgtype=0&src=http%3A%2F%2Feaassets-a.akamaihd.net%2Fbattlelog%2Fprod%2Femblem%2F483%2F489%2F256%2F2955059549753107915.png%3Fv%3D1383717050"] placeholderImage:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     
 }
 
-- (void)prepareData {
+- (void)handleDeviceOrientationChange {
+    UIInterfaceOrientation currentOrientation = UIInterfaceOrientationUnknown;
+    if (UIDeviceOrientationIsValidInterfaceOrientation([UIDevice currentDevice].orientation)) {
+        currentOrientation = (UIInterfaceOrientation)[UIDevice currentDevice].orientation;
+    } else {
+        return;
+    }
+}
+
+- (void)prepareData:(id)text {
     RootRow arr[] = {
         RootRow(@"非完全解耦", DJZHomeViewController.self),
     };

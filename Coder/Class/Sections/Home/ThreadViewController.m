@@ -17,7 +17,7 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self _swizzleImpWithOrigin:@selector(runMode:beforeDate:) swizzle:@selector(xd_runMode:beforeDate:)];
+        //[self _swizzleImpWithOrigin:@selector(runMode:beforeDate:) swizzle:@selector(xd_runMode:beforeDate:)];
     });
 }
 

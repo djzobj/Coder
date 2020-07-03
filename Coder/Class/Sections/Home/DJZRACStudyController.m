@@ -29,7 +29,7 @@
         make.height.mas_equalTo(30);
     }];
 
-    [self racCommand];
+    [self flattenMap];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

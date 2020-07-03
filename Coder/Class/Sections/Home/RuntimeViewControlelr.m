@@ -9,7 +9,6 @@
 #import "RuntimeViewControlelr.h"
 #import <objc/runtime.h>
 
-//MNPerson
 
 void dynamicMethodIMP(id reciver, SEL _cmd, int index) {
     NSLog(@"动态解析实现了");
@@ -47,6 +46,13 @@ void dynamicMethodIMP(id reciver, SEL _cmd, int index) {
        NSLog(@"Sark instance = %@ 地址 = %p",sark,&sark);
     
        [sark speak];
+       
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, NULL);
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(timer, ^{
+        
+    });
+    dispatch_resume(timer);
 
 }
 
@@ -76,7 +82,7 @@ void dynamicMethodIMP(id reciver, SEL _cmd, int index) {
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     NSMethodSignature *signature = [NSMethodSignature signatureWithObjCTypes:"v@:@"];
-    
+
     return signature;
 }
 

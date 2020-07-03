@@ -1,0 +1,55 @@
++[DJZWKWebViewController load]
+___copy_helper_block_e8_32r
+___Block_byref_object_copy_
++[DJZCustomURLProtocol load]
++[UIViewController(naviagtion) load]
++[NSRunLoop(Hook) load]
+___23+[NSRunLoop(Hook) load]_block_invoke
+_main
+-[AppDelegate application:didFinishLaunchingWithOptions:]
+-[AppDelegate setWindow:]
+-[DJZTabBarController viewDidLoad]
+-[DJZTabBarController addItems]
+-[DJZHomeViewController .cxx_construct]
+__ZNSt3__16vectorINS_4pairIU8__strongP8NSStringU8__strongP10objc_classEENS_9allocatorIS8_EEEC1Ev
+__ZNSt3__16vectorINS_4pairIU8__strongP8NSStringU8__strongP10objc_classEENS_9allocatorIS8_EEEC2Ev
+__ZNSt3__113__vector_baseINS_4pairIU8__strongP8NSStringU8__strongP10objc_classEENS_9allocatorIS8_EEEC2Ev
+__ZNSt3__120__vector_base_commonILb1EEC2Ev
+__ZNSt3__117__compressed_pairIPNS_4pairIU8__strongP8NSStringU8__strongP10objc_classEENS_9allocatorIS8_EEEC1IDnLb1EEEOT_
+__ZNSt3__117__compressed_pairIPNS_4pairIU8__strongP8NSStringU8__strongP10objc_classEENS_9allocatorIS8_EEEC2IDnLb1EEEOT_
+__ZNSt3__122__compressed_pair_elemIPNS_4pairIU8__strongP8NSStringU8__strongP10objc_classEELi0ELb0EEC2IDnvEEOT_
+__ZNSt3__1L7forwardIDnEEOT_RNS_16remove_referenceIS1_E4typeE
+__ZNSt3__122__compressed_pair_elemINS_9allocatorINS_4pairIU8__strongP8NSStringU8__strongP10objc_classEEEELi1ELb1EEC2Ev
+__ZNSt3__19allocatorINS_4pairIU8__strongP8NSStringU8__strongP10objc_classEEEC2Ev
+-[DJZHomeViewController init]
+-[DJZHomeViewController initWithNibName:bundle:]
+-[DJZNavigationController viewDidLoad]
+___30+[DJZWKWebViewController load]_block_invoke
+-[DJZHomeViewController viewDidLoad]
+___36-[DJZHomeViewController viewDidLoad]_block_invoke
+__ZL12_MASBoxValuePKcz
+-[DJZHomeViewController supportedInterfaceOrientations]
+-[DJZHomeViewController tableView:numberOfRowsInSection:]
+-[AppDelegate applicationDidBecomeActive:]
+___57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke
+-[DJZHomeViewController tableView:didSelectRowAtIndexPath:]
+-[DJZNavigationController pushViewController:animated:]
+-[DJZArithmeticController viewDidLoad]
+-[DJZBaseVC viewDidLoad]
+-[DJZArithmeticController insertSortArray]
+-[UIViewController(naviagtion) doBack]
+-[DJZHomeViewController viewWillAppear:]
+-[DJZBaseVC viewWillAppear:]
+-[UIViewController(naviagtion) hook_viewWillAppear:]
+-[AppDelegate window]
+-[DJZBaseVC .cxx_destruct]
+-[DJZHomeViewController refresh]
+___copy_helper_block_ea8_32s
+___32-[DJZHomeViewController refresh]_block_invoke
+-[DJZHomeViewController endRefresh]
+-[DJZHomeViewController setState:]
+-[DJZHomeViewController tableView]
+___destroy_helper_block_ea8_32s
+-[DJZBaseVC gestureRecognizerShouldBegin:]
+-[DJZHomeViewController tableView:cellForRowAtIndexPath:]
+-[AppDelegate touchesBegan:withEvent:]

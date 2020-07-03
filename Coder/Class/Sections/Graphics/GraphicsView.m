@@ -15,6 +15,7 @@
 @implementation GraphicsView
 
 - (void)drawRect:(CGRect)rect {
+    _progress = 0.8;
     // Drawing code
     CGFloat originX = rect.size.width/2;
     CGFloat originY = rect.size.height/2;
@@ -30,7 +31,8 @@
     CGContextAddArc(context, originX, originY, radius, 0, 2*M_PI, YES);
     CGContextStrokePath(context);
     CGContextRestoreGState(context);
-    
+
+    CGContextSaveGState(context);
     CGContextSetLineWidth(context, 20);
     CGContextAddArc(context, originY, originY, radius, -M_PI_2, -M_PI_2 + minAngle + (2 * M_PI)*self.progress, NO);
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -41,6 +43,7 @@
     CGContextDrawLinearGradient(context, gradient, CGPointMake(rect.size.width/2, 0), CGPointMake(rect.size.width/2, rect.size.height), kCGGradientDrawsBeforeStartLocation);
     CGColorSpaceRelease(colorSpace);
     CGGradientRelease(gradient);
+    CGContextRestoreGState(context);
     
 }
 

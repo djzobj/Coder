@@ -148,6 +148,17 @@ class SwiftViewController: UIViewController, someProtocol {
         inoutParam(a: &a)
         print("inout参数：\(a)")
         print("IntSubscript:\(12345678[0])")
+        
+        var number = 0
+        var add = {
+            number += 1
+            print(number)
+        }
+        number = 1;
+        add()    //1
+        add()    //2
+        add()    //3
+        print(number)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,12 +182,6 @@ class SwiftViewController: UIViewController, someProtocol {
         a = 20;
     }
     
-//    func isDangerous(animal: Animal) -> Bool {
-//        if animal is Tiger {
-//            return true;
-//        }
-//        return false
-//    }
     func isDangerous<T: Animal>(animal: T) -> Bool {
         if animal is Tiger {
             return true;

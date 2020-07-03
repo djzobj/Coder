@@ -11,6 +11,10 @@
 @implementation Clang
 
 - (void)test {
+    NSInteger a = 0;
+    void(^block)(void) = ^() {
+        NSLog(@"------%d", a);
+    };
 }
 
 @end
